@@ -1,0 +1,248 @@
+.print-media {
+    /* background: #252348; */
+    width: 100%;
+    overflow: hidden;
+
+
+}
+
+.print-media .container .main-title {
+    margin: auto;
+    /* color: #ffffff; */
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .print-media {
+        padding: 15px 0;
+        margin: 30px 0;
+    }
+    .print-media .container .main-title {
+        margin-bottom: 30px;
+    }
+}
+
+.print-media .container .print-media-carousel .item {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+ .item p {
+   color: #fff;
+   text-align: center;
+   font-size: 27px !important;
+}
+
+
+
+.main-title {
+    margin: auto;
+    width: max-content;
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .partners {
+        padding: 30px 0;
+        /* margin-bottom: 15px; */
+    }
+   
+}
+
+.item {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+    background-color: #04432e !important;
+}
+
+
+.counting {
+    padding: 45px 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .counting {
+        padding: 30px 0;
+    }
+}
+
+.counting .container .counting-section {
+    border-radius: 12px;
+    background-color: #fff8e6;
+    padding: 30px 45px;
+}
+@media only screen and (max-width: 992px) {
+    .counting .container .counting-section {
+        padding: 10px 15px;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .counting .container .counting-section {
+        padding: 10px 15px;
+    }
+}
+.counting .container .counting-section .counting-content {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 992px) {
+    .counting .container .counting-section .counting-content {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .counting .container .counting-section .counting-content img {
+        margin: 0 !important;
+    }
+    .counting .container .counting-section .counting-content div {
+        width: 50%;
+        text-align: left;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .counting .container .counting-section .counting-content {
+        flex-direction: row;
+    }
+}
+.counting .container .counting-section .counting-content img {
+    margin: auto;
+    width: 60px;
+}
+.counting .container .counting-section .counting-content p {
+    margin: 0;
+    font-size: 18px;
+    color: #282828;
+    margin-top: 5px;
+}
+@media only screen and (max-width: 992px) {
+    .counting .container .counting-section .counting-content p {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .counting .container .counting-section .counting-content p {
+        font-size: 13px;
+    }
+}
+.counting .container .counting-section .counting-content h3 {
+    margin: 0;
+    font-size: 32px;
+    color: #282828;
+}
+@media only screen and (max-width: 992px) {
+    .counting .container .counting-section .counting-content h3 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .counting .container .counting-section .counting-content h3 {
+        font-size: 16px;
+    }
+}
+.application-process h6 {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.application-process .application-process-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #f9f9f9;
+    transition: 0.3s;
+    text-align: center;
+    padding: 30px 0;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.application-process .application-process-card .process-number {
+    background-color: #ff6600;
+    display: block;
+    width: max-content;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    margin: 15px auto;
+    transition: 0.3s;
+}
+.application-process .application-process-card h5 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e3192;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+.application-process .application-process-card p {
+    margin: 0;
+    padding: 0;
+    color: #595959;
+    font-size: 15px;
+    font-weight: 600;
+}
+.application-process .application-process-card:hover {
+    box-shadow: 0px 12px 12px #dfdfdf;
+    border: 1px solid #f9f9f9;
+    background-color: #ffffff;
+}
+.application-process .application-process-card:hover .process-number {
+    box-shadow: 0 5px 10px #dfdfdf;
+}
+@media only screen and (max-width: 575px) {
+    .application-process .application-process-card {
+        background-color: #ffffff;
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .application-process .application-process-card h5 {
+        font-size: 14px;
+    }
+    .application-process .application-process-card p {
+        font-size: 12px;
+    }
+    .application-process .application-process-card {
+        padding: 8px 0;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 991.5px) {
+    .application-process .application-process-card {
+        margin-bottom: 10px;
+    }
+}
+.bg-04432e{
+    background-color: #04432e !important;
+}
+.bg-3f7764{
+    background-color: #3f7764 !important;
+}
+.trademark-list {
+    list-style: outside none none;
+    border-top: 1px solid #E1E1E1;
+    border-bottom: 1px solid #E1E1E1;
+    margin-bottom: 30px;
+    display: table;
+    width: 100%;
+    margin-top: 30px;
+}
+.trademark-list ul {
+ list-style: none;
+  display: inline-block;
+}
+.trademark-list ul li{
+ list-style: none;
+  display: inline-block;
+  margin-top: 5px;
+}
+#payment-methods{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
