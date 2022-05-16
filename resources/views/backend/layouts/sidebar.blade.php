@@ -23,6 +23,12 @@
       <!-- /Dashboard -->
       <!-- Order Page Elements -->
       <li class="menu-item">
+        <a href="{{ route('setting') }}" >
+            <i class="material-icons fs-16">dashboard</i> <span>Setting</span>
+        </a>
+
+      </li>
+      <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order-page" aria-expanded="false" aria-controls="order-page">
           <span><i class="fas fa-clipboard-list"></i>Order</span>
         </a>

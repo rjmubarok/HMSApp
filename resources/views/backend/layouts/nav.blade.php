@@ -1,4 +1,4 @@
-<nav class="navbar ms-navbar">
+<nav class="navbar ms-navbar sticky-top">
 
     <div class="ms-aside-toggler ms-toggler pl-0" data-target="#ms-side-nav" data-toggle="slideLeft">
       <span class="ms-toggler-bar bg-primary"></span>

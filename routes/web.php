@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Indexcontroller;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -26,5 +27,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::get('/', [AdminController::class,'admin'])->name('admin');
-    // banner route
+    Route::get('setting', [SettingController::class,'setting'])->name('setting');
+    Route::put('seting-update',[SettingController::class, 'setingUpdate'])->name('seting.update');
  });

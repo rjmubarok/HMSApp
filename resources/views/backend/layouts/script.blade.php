@@ -27,7 +27,12 @@
 
   <!-- Settings -->
   <script src="{{ asset('backend') }}/assets/js/settings.js"></script>
-
+@yield('scripts')
+<script>
+    setTimeout(function(){
+      $('#alert').slideUp()
+    },4000)
+    </script>
 </body>
 
 
