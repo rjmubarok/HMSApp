@@ -39,17 +39,13 @@
         </div>
       </div>
       <div class="col-12 col-sm-12 col-lg-3 col-md-3 shadow">
-        <div class="card h-100"><img class="card-img-top" src="{{ asset('frontend') }}/assets/images/about/about.png" alt="Reenal Scott" />
+        <div class="card h-100"><img class="card-img-top" src="{{ \App\Models\Setting::value('side_photo') }}" alt="Reenal Scott" />
           <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
             <div class="overflow-hidden">
-              <h5 data-zanim-xs='{"delay":0}'>Reenal Scott</h5>
+              <h5 data-zanim-xs='{"delay":0}'>{{ \App\Models\Setting::value('side_title') }}</h5>
             </div>
             <div class="overflow-hidden">
-              <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Advertising Consultant</h6>
-            </div>
-            <div class="overflow-hidden">
-              <p class="py-3 mb-0" data-zanim-xs='{"delay":0.2}'>Reenal Scott is the Founder and CEO of Elixir,
-                which he started from his dorm room in 2013 with 3 people only.</p>
+              <p class="py-3 mb-0" data-zanim-xs='{"delay":0.2}'>{{ \App\Models\Setting::value('side_description') }}</p>
             </div>
           </div>
         </div>

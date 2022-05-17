@@ -2,7 +2,7 @@
 
     <!-- Logo -->
     <div class="logo-sn ms-d-block-lg">
-      <a class="pl-0 ml-0 text-center" href="index-2.html"> <img src="{{ asset('backend') }}/assets/img/dashboard/greendash-logo.png" alt="logo"> </a>
+      <a class="pl-0 ml-0 text-center" href="index-2.html"> <img src="{{ \App\Models\Setting::value('logo') }}" alt="logo"> </a>
     </div>
 
     <!-- Navigation -->

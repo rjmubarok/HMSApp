@@ -2,12 +2,12 @@
     <div class="container">
       <div class="row align-items-center gx-4">
         <div class="col-auto d-none d-lg-block fs--1"><span class="fas fa-map-marker-alt text-warning me-2"
-            data-fa-transform="grow-3"></span>University Location </div>
+            data-fa-transform="grow-3"></span>{{ \App\Models\Setting::value('address') }} </div>
         <div class="col-auto ms-md-auto order-md-2 d-none d-sm-flex fs--1 align-items-center"><span
             class="fas fa-clock text-warning me-2" data-fa-transform="grow-3"></span>Visit us: 9am to 10 pm ( Mon - Fri)
         </div>
         <div class="col-auto"><span class="fas fa-phone-alt text-warning" data-fa-transform="shrink-3"></span><a
-            class="ms-2 fs--1 d-inline text-white fw-bold" href="tel:01781991183">01781991183</a></div>
+            class="ms-2 fs--1 d-inline text-white fw-bold" href="tel:01781991183">{{ \App\Models\Setting::value('phone') }}</a></div>
       </div>
     </div>
   </div>

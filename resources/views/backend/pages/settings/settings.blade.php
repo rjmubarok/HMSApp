@@ -84,7 +84,7 @@
                     <img src="{{ $setting->side_photo }}" alt=""style="margin-top:10px;max-height:100px;">
                 </div>
                 <div id="holder2" style="margin-top:15px;max-height:100px;"> </div>
-                <button type="submit" class="btn btn-primary">Update Setting</button>
+                <button type="submit" class="btn btn-success btn-pill">Update Setting</button>
             </form>
         </div>
     </div>

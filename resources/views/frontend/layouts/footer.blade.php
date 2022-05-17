@@ -19,10 +19,10 @@
 
       </div>
       <div class="row align-items-center opacity-85 text-white">
-        <div class="col-sm-3 text-sm-start"><a href="index-2.html"><img src="{{ asset('frontend') }}/assets/images/b-6.png" alt="logo" /></a>
+        <div class="col-sm-3 text-sm-start"><a href="index-2.html"><img src="{{ \App\Models\Setting::value('logo') }}" alt="logo" /></a>
         </div>
         <div class="col-sm-6 mt-3 mt-sm-0">
-          <p class="lh-lg mb-0 fw-semi-bold">&copy; Copyright 2022 Rj </p>
+          <p class="lh-lg mb-0 fw-semi-bold">&copy; {{ \App\Models\Setting::value('footer') }}> </p>
         </div>
         <div class="col text-sm-end mt-3 mt-sm-0"><span class="fw-semi-bold">Designed by </span><a class="text-white"
             href="mubarok" target="_blank">Rj Mubarok</a></div>
