@@ -11,7 +11,7 @@
   <!-- Iconic Fonts -->
   <link rel="icon" href="{{ \App\Models\Setting::value('favicon') }}">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+  <link href="{{ asset('backend') }}/vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('backend') }}/vendors/iconic-fonts/flat-icons/flaticon.css">
   <link rel="stylesheet" href="{{ asset('backend') }}/vendors/iconic-fonts/cryptocoins/cryptocoins.css">
   <link rel="stylesheet" href="{{ asset('backend') }}/vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css">
@@ -23,6 +23,8 @@
   <link href="{{ asset('backend') }}/assets/css/slick.css" rel="stylesheet">
   <!-- Weedo styles -->
   <link href="{{ asset('backend') }}/assets/css/style.css" rel="stylesheet">
+  <!-- Page Specific Css (Datatables.css) -->
+  <link href="{{ asset('backend') }}/assets/css/datatables.min.css" rel="stylesheet">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
 

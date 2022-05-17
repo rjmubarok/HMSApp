@@ -24,9 +24,18 @@
       <!-- Order Page Elements -->
       <li class="menu-item">
         <a href="{{ route('setting') }}" >
-            <i class="material-icons fs-16">dashboard</i> <span>Setting</span>
+            <i class="material-icons fs-16">Setting</i> <span>Setting</span>
         </a>
 
+      </li>
+      <li class="menu-item">
+        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#Noice" aria-expanded="false" aria-controls="Noice">
+          <span><i class="fas fa-clipboard-list"></i>Slide & Notice Board</span>
+        </a>
+        <ul id="Noice" class="collapse" aria-labelledby="Noice" data-parent="#side-nav-accordion">
+          <li> <a href="{{ route('slide-notice.create') }}">Add Slide & Noice</a> </li>
+          <li> <a href="{{ route('slide-notice.index') }}">All Slide & Noice</a> </li>
+        </ul>
       </li>
       <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order-page" aria-expanded="false" aria-controls="order-page">

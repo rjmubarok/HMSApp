@@ -12,8 +12,10 @@
   <script src="{{ asset('backend') }}/assets/js/jquery.webticker.min.js"> </script>
   <script src="{{ asset('backend') }}/assets/js/Chart.bundle.min.js"> </script>
   <script src="{{ asset('backend') }}/assets/js/Chart.Financial.js"> </script>
-  <script src="{{ asset('backend') }}/assets/js/table-line.js"> </script>
+  {{-- <script src="{{ asset('backend') }}/assets/js/table-line.js"> </script> --}}
   <script src="{{ asset('backend') }}/assets/js/index-chart.js"> </script>
+  <script src="{{ asset('backend/assets/js/data-tables.js') }}"> </script>
+  <script src="{{ asset('backend/assets/js/datatables.min.js') }}"> </script>
 
   <script src="{{ asset('backend') }}/assets/js/d3.v3.min.js"> </script>
   <script src="{{ asset('backend') }}/assets/js/topojson.v1.min.js"> </script>
