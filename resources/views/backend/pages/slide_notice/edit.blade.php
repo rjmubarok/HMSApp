@@ -28,11 +28,10 @@
                 <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
                 <div class="form-group">
                     <label for="notice">notice Board</label>
-                    <input type="notice" class="form-control @error('notice') is-invalid @enderror" id="notice" name="notice" value="{{ $slider->notice }}"
-                        placeholder=" Write Notic Board">
-                        @error('notice')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                    <textarea id="summernote" rows="" cols="2" class="form-control  @error('notice') is-invalid @enderror" name="notice">{{ $slider->notice }}</textarea>
+                    @error('notice')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="notice">Status</label>
@@ -64,5 +63,10 @@
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 <script>
     $('#lfm,#lfm1,#lfm2').filemanager('image');
+</script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
 </script>
 @endsection

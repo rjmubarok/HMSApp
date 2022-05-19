@@ -38,6 +38,15 @@
         </ul>
       </li>
       <li class="menu-item">
+        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#fool" aria-expanded="false" aria-controls="fool">
+          <span><i class="fas fa-clipboard-list"></i>Floor</span>
+        </a>
+        <ul id="fool" class="collapse" aria-labelledby="fool" data-parent="#side-nav-accordion">
+          <li> <a href="{{ route('floor.create') }}">Add Floor</a> </li>
+          <li> <a href="{{ route('floor.index') }}">All Floor </a> </li>
+        </ul>
+      </li>
+      <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order-page" aria-expanded="false" aria-controls="order-page">
           <span><i class="fas fa-clipboard-list"></i>Order</span>
         </a>

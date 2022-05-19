@@ -6,7 +6,7 @@
         <div class="item">
           <div class="print-media-carousel owl-carousel owl-theme ">
               @foreach ($sliders as $notice )
-              <p>{{ $notice->notice }}</p>
+              <p>{!! $notice->notice !!}</p>
               @endforeach
           </div>
         </div>

@@ -25,6 +25,7 @@
   <link href="{{ asset('backend') }}/assets/css/style.css" rel="stylesheet">
   <!-- Page Specific Css (Datatables.css) -->
   <link href="{{ asset('backend') }}/assets/css/datatables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('backend/vendors/summernote/dist/summernote.css') }}">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
 

@@ -29,6 +29,7 @@
 
   <!-- Settings -->
   <script src="{{ asset('backend') }}/assets/js/settings.js"></script>
+  <script src="{{ asset('backend/vendors/summernote/dist/summernote.js') }}"></script>
 @yield('scripts')
 <script>
     setTimeout(function(){

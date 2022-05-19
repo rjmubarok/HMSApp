@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FloorController;
 use App\Http\Controllers\Indexcontroller;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SliderController;
@@ -30,6 +31,8 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::get('/', [AdminController::class,'admin'])->name('admin');
     //Slide And Notice
     Route::resource('slide-notice',SliderController::class);
+    //Slide And Notice
+    Route::resource('floor',FloorController::class);
     //General Seting
     Route::get('setting', [SettingController::class,'setting'])->name('setting');
     Route::put('seting-update',[SettingController::class, 'setingUpdate'])->name('seting.update');
