@@ -17,6 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('room_name');
             $table->float('room_number');
+            $table->float('price');
+            $table->enum('total_bed',['one', 'tow','three','four'])->default('tow');
+            $table->enum('abailable_bed',['one', 'tow','three','four'])->default('tow');
             $table->string('room_photo')->nullable();
             $table->unsignedBigInteger('floor_id')->nullable();
             $table->longText('description')->nullable();

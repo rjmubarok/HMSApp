@@ -10,60 +10,78 @@
         <div class="col-xl-12 col-md-12">
             <div class="ms-panel ms-panel-fh">
 
-              <div class="ms-panel-body">
-                <div class="table-responsive">
-                  <table class="table thead-secondary">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Photo</th>
-                        <th scope="col">Room Number</th>
-                        <th scope="col">Floor Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($rooms as $item)
-                      <tr>
-                        <th scope="row">{{$loop->iteration}}</th>
-                        <td>{{ $item->room_name }}</td>
-                        <td><img src="{{ $item->room_photo }}" alt=""></td>
-                        <td>{{ $item->room_number }}</td>
-                        <td>{{ \App\Models\Floor::where('id',
-                            $item->floor_id)->value('floor_name') }}</td>
-                        <td>{!! $item->description !!}</td>
-                        <td>
-                            @if ( $item->status==1 )
-                            <span class="badge badge-pill badge-success">Active</span>
+                <div class="ms-panel-body">
+                    <div class="table-responsive">
+                        <table class="table thead-secondary">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Photo</th>
+                                    <th scope="col">Room Number</th>
+                                    <th scope="col">Floor Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Total Bed</th>
+                                    <th scope="col">Availeable Bed</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($rooms as $item)
+                                <tr>
+                                    <th scope="row">{{$loop->iteration}}</th>
+                                    <td>{{ $item->room_name }}</td>
+                                    <td><img src="{{ $item->room_photo }}" alt=""></td>
+                                    <td>{{ $item->room_number }}</td>
+                                    <td>{{ \App\Models\Floor::where('id',
+                                        $item->floor_id)->value('floor_name') }}</td>
+                                        <td>
+                                            {{ $item->price }}
+                                        </td>
+                                    <td>
+                                        <span class="badge badge-pill btn-gradient-light">{{ $item->total_bed }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-pill btn-gradient-primary">{{ $item->abailable_bed }}</span>
+                                    </td>
+                                    <td>{!! $item->description !!}</td>
 
-                            @else
-                            <span class="badge badge-pill badge-danger">Inactive</span>
-                            @endif
-                        </td>
+                                    <td>
+                                        @if ( $item->status==1 )
+                                        <span class="badge badge-pill btn-gradient-success">Active</span>
 
-                            <td class="d-flex text-center">
-                                <a href="{{route('room.edit',$item->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom"  class=" ms-btn-icon btn-info">
-                                    <i class="fas fa-edit ml-2"></i>
-                                     </a>
-                              <form action="{{route('room.destroy',$item->id)}}" method="POST" class="float-left ">
-                                  @method('DELETE')
-                                   @csrf
-                                  <a href="" data-id=" {{$item->id}} " data-toggle="tooltip" title="Delete" data-placement="bottom" class=" dltbtn ms-btn-icon btn-danger btn-sm btn-outline-danger"> <i class="fas fa-trash-alt ml-2"></i> </a>
-                              </form>
+                                        @else
+                                        <span class="badge badge-pill btn-gradient-danger">Inactive</span>
+                                        @endif
+                                    </td>
 
-                            </td>
+                                    <td class="d-flex text-center">
+                                        <a href="{{route('room.edit',$item->id)}}" data-toggle="tooltip" title="Edit"
+                                            data-placement="bottom" class=" ms-btn-icon btn-info">
+                                            <i class="fas fa-edit ml-2"></i>
+                                        </a>
+                                        <form action="{{route('room.destroy',$item->id)}}" method="POST"
+                                            class="float-left ">
+                                            @method('DELETE')
+                                            @csrf
+                                            <a href="" data-id=" {{$item->id}} " data-toggle="tooltip" title="Delete"
+                                                data-placement="bottom"
+                                                class=" dltbtn ms-btn-icon btn-danger btn-sm btn-outline-danger"> <i
+                                                    class="fas fa-trash-alt ml-2"></i> </a>
+                                        </form>
 
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
+                                    </td>
+
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
     </div>
 </div>
 @endsection

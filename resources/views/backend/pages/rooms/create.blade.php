@@ -47,6 +47,40 @@
                     @enderror
                     </select>
                 </div>
+                <div class="form-group ">
+                    <label> <span class=""> Total Bed</span></label>
+                    <select name="total_bed" id="" class="form-control">
+                        <option value="" style="display: none;" selected> -- Total Bed --</option>
+                        <option value="one" > -- One --</option>
+                        <option value="tow" > -- Tow --</option>
+                        <option value="three" > -- Three --</option>
+                        <option value="four" > -- Four --</option>
+                        @error('total_bed')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label> <span class=""> Available  Bed</span></label>
+                    <select name="abailable_bed" id="" class="form-control">
+                        <option value="" style="display: none;" selected> -- Available Bed --</option>
+                        <option value="one" > -- One --</option>
+                        <option value="tow" > -- Tow --</option>
+                        <option value="three" > -- Three --</option>
+                        <option value="four" > -- Four --</option>
+                        @error('abailable_bed')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="number"  class="form-control  @error('price') is-invalid @enderror" name="price" {{ old('price') }} placeholder="Price">
+                    @error('price')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                </div>
+
                 <label> Room Photo </label>
                 <div class="input-group">
                     <span class="input-group-btn">

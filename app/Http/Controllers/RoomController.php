@@ -96,17 +96,18 @@ class RoomController extends Controller
     public function update(Request $request, $id)
     {
         $room = room::find($id);
-
+      //  return $room;
         if ($room) {
             $this->validate($request, [
                 'room_name' => 'required',
                 'room_number' => 'required',
                 'room_photo' => 'string|nullable',
                 'description' => 'string|nullable',
-                'floor_id' => 'required|nullable',
+               // 'floor_id' => 'required|nullable',
 
             ]);
             $data = $request->all();
+          //  return $data;
             $room = $room->fill($data)->save();
             if ($room) {
                 return redirect()->route('room.index')->with('success', 'Room Update Successfully');

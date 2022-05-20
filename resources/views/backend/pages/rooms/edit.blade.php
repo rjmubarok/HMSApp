@@ -6,6 +6,15 @@
             <h6>Room</h6>
             <a href="{{ route('room.index') }}" class="btn btn-primary">All Room</a>
         </div>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         @include('backend.layouts.notification')
         <div class="ms-panel-body">
             <form id="basic-form" method="post" action="{{ route('room.update', $room->id) }}"
@@ -39,7 +48,39 @@
                         @enderror
                         </select>
                     </div>
-
+                    <div class="form-group ">
+                        <label> <span class=""> Total Bed</span></label>
+                        <select name="total_bed" id="" class="form-control">
+                            <option value="" style="display: none;" selected> -- Total Bed --</option>
+                            <option value="one" @if ($room->total_bed == 'one') Selected @endif> -- One --</option>
+                            <option value="tow" @if ($room->total_bed == 'tow') Selected @endif> -- Tow --</option>
+                            <option value="three" @if ($room->total_bed == 'three') Selected @endif> -- Three --</option>
+                            <option value="four" @if ($room->total_bed == 'four') Selected @endif> -- Four --</option>
+                            @error('total_bed')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <label> <span class=""> Available  Bed</span></label>
+                        <select name="abailable_bed" id="" class="form-control">
+                            <option value="" style="display: none;" selected> -- Available Bed --</option>
+                            <option value="one" @if ($room->abailable_bed == 'one') Selected @endif> -- One --</option>
+                            <option value="tow" @if ($room->abailable_bed == 'tow') Selected @endif> -- Tow --</option>
+                            <option value="three"@if ($room->abailable_bed == 'three') Selected @endif> -- Three --</option>
+                            <option value="four" @if ($room->abailable_bed == 'four') Selected @endif> -- Four --</option>
+                            @error('abailable_bed')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number"  class="form-control  @error('price') is-invalid @enderror" name="price" {{ old('price') }} placeholder="Price:" value="{{ $room->price }}">
+                        @error('price')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    </div>
                 <label> Room Photo </label>
                 <div class="input-group">
                     <span class="input-group-btn">
