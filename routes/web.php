@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FloorController;
 use App\Http\Controllers\Indexcontroller;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +32,10 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::get('/', [AdminController::class,'admin'])->name('admin');
     //Slide And Notice
     Route::resource('slide-notice',SliderController::class);
-    //Slide And Notice
+    //floor
     Route::resource('floor',FloorController::class);
+    //room
+    Route::resource('room',RoomController::class);
     //General Seting
     Route::get('setting', [SettingController::class,'setting'])->name('setting');
     Route::put('seting-update',[SettingController::class, 'setingUpdate'])->name('seting.update');

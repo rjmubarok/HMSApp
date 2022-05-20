@@ -47,6 +47,15 @@
         </ul>
       </li>
       <li class="menu-item">
+        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#room" aria-expanded="false" aria-controls="room">
+          <span><i class="fas fa-clipboard-list"></i>Room</span>
+        </a>
+        <ul id="room" class="collapse" aria-labelledby="room" data-parent="#side-nav-accordion">
+          <li> <a href="{{ route('room.create') }}">Add Room</a> </li>
+          <li> <a href="{{ route('room.index') }}">All Room </a> </li>
+        </ul>
+      </li>
+      <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order-page" aria-expanded="false" aria-controls="order-page">
           <span><i class="fas fa-clipboard-list"></i>Order</span>
         </a>
