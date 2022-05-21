@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\SocialiteloginController;
 use App\Http\Controllers\FloorController;
 use App\Http\Controllers\Indexcontroller;
 use App\Http\Controllers\RoomController;
@@ -24,9 +25,13 @@ use Illuminate\Support\Facades\Auth;
 // });
 Route::get('/',[Indexcontroller::class,'index']);
 
-Auth::routes(['register'=>false]);
+//Auth::routes(['register'=>false]);
+Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/CallGitHub',[SocialiteloginController::class,'CallGitHub'])->name('CallGitHub');
+Route::get('/GithubCallBack',[SocialiteloginController::class,'GithubCallBack']);
+
+//  Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::get('/', [AdminController::class,'admin'])->name('admin');
