@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             //admin
 [
-    'full_name'=>'SuperAdmin',
+    'name'=>'SuperAdmin',
     'user_name'=>'Admin',
     'email'=>'SuperAdmin@email.com',
     'password'=>Hash::make('superadmin'),
@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
 
 // user
 [
-    'full_name'=>'user',
+    'name'=>'user',
     'user_name'=>'user',
     'email'=>'user@email.com',
     'password'=>Hash::make('user'),
