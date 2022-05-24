@@ -5,14 +5,14 @@
           <ul class="d-block">
             <li id="payment-methods">Accepted Payment Methods</li>
             <li>
-              <a href="#"><img src="{{ asset('frontend') }}/assets/img/card4.png" alt="Lazz"></a>
+              <a href="#"><img src="{{ asset('frontend') }}/assets/img/card4.png" alt=""></a>
             </li>
 
             <li>
-              <a href="#"><img src="{{ asset('frontend') }}/assets/img/card6.png" alt="Lazz"></a>
+              <a href="#"><img src="{{ asset('frontend') }}/assets/img/card6.png" alt=""></a>
             </li>
             <li>
-              <a href="#"><img src="{{ asset('frontend') }}/assets/img/card7.png" alt="Lazz"></a>
+              <a href="#"><img src="{{ asset('frontend/assets/img/mqdefault.jpg') }}" alt="" height="50"></a>
             </li>
           </ul>
         </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00b691922059978d75a02194df756581",
+    "content-hash": "6d5e88524d5389574d66b8a944ae23b6",
     "packages": [
         {
             "name": "brick/math",
@@ -3076,6 +3076,44 @@
                 }
             ],
             "time": "2022-03-27T21:42:02+00:00"
+        },
+        {
+            "name": "shurjopayv2/laravel8",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NAM00/spV2_Laravel8.git",
+                "reference": "9c9fce571a99f29f011d0aa0670e5ad1555baea2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NAM00/spV2_Laravel8/zipball/9c9fce571a99f29f011d0aa0670e5ad1555baea2",
+                "reference": "9c9fce571a99f29f011d0aa0670e5ad1555baea2",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "shurjopayv2\\ShurjopayLaravelPackage8\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nazia Afsan Mowmita",
+                    "email": "mowmita@shurjomukhi.com.bd"
+                }
+            ],
+            "description": "Online Payment Gateway",
+            "support": {
+                "issues": "https://github.com/NAM00/spV2_Laravel8/issues",
+                "source": "https://github.com/NAM00/spV2_Laravel8/tree/master"
+            },
+            "time": "2021-11-01T06:12:18+00:00"
         },
         {
             "name": "symfony/console",
@@ -8174,7 +8212,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "shurjopayv2/laravel8": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

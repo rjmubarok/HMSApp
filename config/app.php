@@ -184,6 +184,7 @@ return [
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        shurjopayv2\ShurjopayLaravelPackage8\ShurjopayServiceProvider::class,
         /*
          * Package Service Providers...
          */

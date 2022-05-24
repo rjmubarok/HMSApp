@@ -15,7 +15,7 @@
 </div>
 <div class="sticky-top navbar-elixir">
     <div class="container">
-        <nav class="navbar navbar-expand-lg"> <a class="navbar-brand" href="index-2.html"><img
+        <nav class="navbar navbar-expand-lg"> <a class="navbar-brand" href="{{ route('/') }}"><img
                     src="{{ asset('frontend') }}/assets/images/b-6.png" alt="logo" /></a><button
                 class="navbar-toggler p-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false"

@@ -113,7 +113,7 @@
             </div>
             <div class="col-12 col-lg-12">
               <div class=" p-5 ">
-                <a class="btn-outline-dark btn btn-success" href="registration.html">Click To Registration For
+                <a class="btn-outline-dark btn btn-success" href="{{ route('apply.for.seat') }}">Click To Registration For
                   Seat</a>
               </div>
             </div>
@@ -130,24 +130,24 @@
       </div>
       <div class="text-center">
         <div class="row">
-          <div class="col-sm-6 col-lg-4    ">
-            <div class="card h-100 shadow"><img class="card-img-top" src="{{ asset('frontend') }}/assets/images/blog-post/post1.png"
-                alt="Reenal Scott" />
-              <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                <div class="overflow-hidden">
-                  <h5 data-zanim-xs='{"delay":0}'>Frist Floor</h5>
-                </div>
-                <div class="overflow-hidden">
-                  <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Advertising Consultant</h6>
-                </div>
-                <div class="overflow-hidden">
-                  <p class="py-3 mb-0" data-zanim-xs='{"delay":0.2}'>Reenal Scott is the Founder and CEO of Elixir,
-                    which he started from his dorm room in 2013 with 3 people only.</p>
+            @foreach ($floors as $floor)
+            <div class="col-sm-6 col-lg-4    ">
+                <div class="card h-100 shadow"><img class="card-img-top" src="{{ $floor->floor_photo }}"
+                    alt="Reenal Scott" />
+                  <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                    <div class="overflow-hidden">
+                      <h5 data-zanim-xs='{"delay":0}'><a href="">{{ $floor->floor_name }}</a></h5>
+                    </div>
+
+                    <div class="overflow-hidden">
+                      <p class="py-3 mb-0" data-zanim-xs='{"delay":0.2}'>{!! $floor->floor_description !!}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0  ">
+            @endforeach
+
+          {{-- <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0  ">
             <div class="card h-100 shadow"><img class="card-img-top" src="{{ asset('frontend') }}/assets/images/blog-post/post2.png"
                 alt="Lily Anderson" />
               <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
@@ -233,7 +233,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div><!-- end of .container-->

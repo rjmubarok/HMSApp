@@ -121,8 +121,18 @@ class FloorController extends Controller
      * @param  \App\Models\Floor  $floor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Floor $floor)
+    public function destroy($id)
     {
-        //
+        $floor = Floor::find($id);
+        if($floor){
+           $status= $floor->delete();
+            if($status){
+                return redirect()->route('floor.index')->with('success', 'Floor Delete Successfully');
+            }else{
+                return back()->with('error','Please Try Again');
+            }
+        }else{
+            return back()->with('error','Data Not Faound');
+        }
     }
 }

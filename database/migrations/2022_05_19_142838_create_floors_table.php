@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('floor_name');
             $table->string('floor_photo');
-            $table->string('floor_description')->nullable();
+            $table->text('floor_description')->nullable();
             $table->float('total_room');
             $table->float('floor_no');
             $table->string('slug');

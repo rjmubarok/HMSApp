@@ -56,13 +56,22 @@
         </ul>
       </li>
       <li class="menu-item">
+        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order" aria-expanded="false" aria-controls="order">
+          <span><i class="fas fa-clipboard-list"></i>Order Manegment</span>
+        </a>
+        <ul id="order" class="collapse" aria-labelledby="order" data-parent="#side-nav-accordion">
+          <li> <a href="{{ route('order.index') }}">All order </a> </li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="{{ route('user.index') }}" class="has-chevron" >
+          <span><i class="fas fa-clipboard-list"></i>User Managment</span>
+        </a>
+      </li>
+      <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order-page" aria-expanded="false" aria-controls="order-page">
           <span><i class="fas fa-clipboard-list"></i>Order</span>
         </a>
-        <ul id="order-page" class="collapse" aria-labelledby="order-page" data-parent="#side-nav-accordion">
-          <li> <a href="pages/order/order-status.html">Order Status</a> </li>
-
-        </ul>
       </li>
       <!-- /order page -->
 

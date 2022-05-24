@@ -125,8 +125,18 @@ class RoomController extends Controller
      * @param  \App\Models\room  $room
      * @return \Illuminate\Http\Response
      */
-    public function destroy(room $room)
+    public function destroy($id)
     {
-        //
+        $room = room::find($id);
+        if($room){
+           $status= $room->delete();
+            if($status){
+                return redirect()->route('room.index')->with('success', 'Room Delete Successfully');
+            }else{
+                return back()->with('error','Please Try Again');
+            }
+        }else{
+            return back()->with('error','Data Not Faound');
+        }
     }
 }
