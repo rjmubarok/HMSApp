@@ -5,8 +5,8 @@
     <!--/.bg-holder-->
     <div class="container">
       <div class="row min-vh-100 align-items-center">
-        <div class="col-md-8 col-lg-5 mx-auto" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-          <div class="card" data-zanim-xs='{"delay":0.1,"duration":1}'>
+        <div class="col-md-8 col-lg-5 mx-auto">
+          <div class="card">
               <div class="card-body p-md-5">
                 <h4 class="text-uppercase fs-0 fs-md-1">Applay Successfully Done </h4>
                 {{-- <form class="text-start mt-4">

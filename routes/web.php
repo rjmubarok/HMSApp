@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Auth;
 //     return view('welcome');
 // });
 Route::get('/',[Indexcontroller::class,'index'])->name('/');
+Route::get('/aboute',[Indexcontroller::class,'aboute'])->name('aboute');
+Route::get('/contact',[Indexcontroller::class,'contact'])->name('contact');
 
 //Auth::routes(['register'=>false]);
 Auth::routes();

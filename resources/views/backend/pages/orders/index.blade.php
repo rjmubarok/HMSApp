@@ -23,6 +23,8 @@
                                     <th scope="col">Post Code</th>
                                     <th scope="col">Ammount</th>
                                     <th scope="col">Date of Birth</th>
+                                    <th scope="col">Floor</th>
+                                    <th scope="col">Room</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -38,7 +40,8 @@
                                     <td>{{ $item->customer_postcode }}</td>
                                     <td>{{ $item->amount }}</td>
                                     <td>{{ $item->dob }}</td>
-
+                                    <td>{{ $item->floor->floor_name }}</td>
+                                    <td>{{$item->room->room_number }}</td>
                                     <td class="d-flex text-center">
                                         <form action="{{route('order.destroy',$item->id)}}" method="POST"
                                             class="float-left ">

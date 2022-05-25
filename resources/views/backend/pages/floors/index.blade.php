@@ -36,10 +36,10 @@
                         <td>{!! $item->floor_description !!}</td>
                         <td>
                             @if ( $item->status==1 )
-                            <span class="badge badge-pill badge-success">Active</span>
+                            <span class="btn btn-pill  btn-success">Active</span>
 
                             @else
-                            <span class="badge badge-pill badge-danger">Inactive</span>
+                            <span class="btn btn-pill btn-danger">Inactive</span>
                             @endif
                         </td>
 

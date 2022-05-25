@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('side_photo')->nullable();
             $table->string('side_title')->nullable();
-            $table->string('side_description')->nullable();
+            $table->longText('side_description')->nullable();
             $table->string('footer')->nullable();
             $table->timestamps();
         });

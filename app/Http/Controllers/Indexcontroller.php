@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Floor;
 use App\Models\Order;
+use App\Models\room;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class Indexcontroller extends Controller
         return view('frontend.pages.index', compact(['sliders','floors']));
     }
     public function applyeForSet(){
-        return view('frontend.pages.orderforseat');
+        $rooms=room::where('status',1)->orderBy('id','DESC')->get();
+        $floors=Floor::where('status',1)->orderBy('id','DESC')->get();
+        return view('frontend.pages.orderforseat', compact(['rooms','floors']));
     }
 
 public function storeorder(Request $request){
@@ -28,5 +31,10 @@ public function storeorder(Request $request){
     }
 }
 
-
+public function aboute(){
+    return view('frontend.pages.aboute');
+}
+public function contact(){
+    return view('frontend.pages.contact');
+}
 }

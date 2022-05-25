@@ -30,6 +30,9 @@ return new class extends Migration
             $table->string('client_ip')->nullable();
             $table->string('customer_state')->default('BD');
             $table->string('value1')->default('BD');
+            $table->unsignedBigInteger('floor_id')->default(1);
+            $table->unsignedBigInteger('room_id')->default(1);
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

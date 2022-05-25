@@ -23,16 +23,13 @@
                         class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
             <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
                 <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-                    <li class="nav-item "><a class="nav-link " href="JavaScript:void(0)">Home</a>
+                    <li class="nav-item "><a class="nav-link " href="{{ route('/') }}">Home</a>
                     </li>
-                    <li class="nav-item "><a class="nav-link " href="JavaScript:void(0)">About</a>
+                    <li class="nav-item "><a class="nav-link " href="{{ route('aboute') }}">About</a>
                     </li>
                     <li class="nav-item "><a class="nav-link " href="JavaScript:void(0)">Our Program</a>
                     </li>
-                    <li class="nav-item "><a class="nav-link " href="JavaScript:void(0)">Pages</a>
-                    </li>
-
-                    <li class="nav-item dropdown"><a class="nav-link" href="contact.html">Contact us</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="{{ route('contact') }}">Contact us</a></li>
                 </ul>
                 @auth
                 {{-- <a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0"

@@ -97,6 +97,19 @@ class OrderController extends Controller
 
     public function initiatePayment(Request $request)
     {
+        $this->validate($request,[
+            'customer_name'=>'required|string',
+            'customer_phone'=>'required',
+            'customer_address'=>'required',
+            'customer_city'=>'required',
+            'customer_postcode'=>'required',
+            'floor_id'=>'required',
+            'room_id'=>'required',
+            'customer_city'=>'required',
+            'email'=>'required|email',
+            'dob'=>'required',
+        ]);
+
         $data= $request->all();
         $info = Order::create($data);
         $info = array(
