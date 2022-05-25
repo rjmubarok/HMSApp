@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/',[Indexcontroller::class,'index'])->name('/');
 Route::get('/aboute',[Indexcontroller::class,'aboute'])->name('aboute');
 Route::get('/contact',[Indexcontroller::class,'contact'])->name('contact');
+Route::get('--/{slug}',[Indexcontroller::class,'floorMember'])->name('floormember')->middleware('user');
 
 //Auth::routes(['register'=>false]);
 Auth::routes();

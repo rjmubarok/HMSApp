@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\room;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Indexcontroller extends Controller
 {
@@ -37,4 +38,27 @@ public function aboute(){
 public function contact(){
     return view('frontend.pages.contact');
 }
+public function floorMember($slug){
+ Auth::check();
+    $floor = Floor::where('slug', $slug)->first();
+    if($floor && $floor->slug == $slug){
+        $members=  Order::where('floor_id',$floor->id)->get();
+       // return $members;
+        return view('frontend.pages.floormember', compact(['members','floor']));
+    }else{
+        return back();
+    }
+
+
+    // $categories = Category::where('slug', $slug)->first();
+    //     if($categories && $categories->slug == $slug){
+    //      $services=  Service::where('category_id',$categories->id)->get();
+    //      $courses=  Course::where('category_id',$categories->id)->get();
+    //      $bussiness=  Bussiness::where('category_id',$categories->id)->get();
+
+    //     }
+    //     return view('site.pages.servicesSinglepage', compact(['services','categories','courses','bussiness']));
+}
+
+
 }

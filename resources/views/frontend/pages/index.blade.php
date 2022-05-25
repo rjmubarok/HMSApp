@@ -134,13 +134,13 @@
             <div class="col-sm-6 col-lg-4    ">
                 <div class="card h-100 shadow"><img class="card-img-top" src="{{ $floor->floor_photo }}"
                     alt="Reenal Scott" />
-                  <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="card-body" data-zanim-trigger="scroll">
                     <div class="overflow-hidden">
-                      <h5 data-zanim-xs='{"delay":0}'><a href="">{{ $floor->floor_name }}</a></h5>
+                      <h5 ><a href="{{ route('floormember', ['slug' => $floor->slug]) }}">{{ $floor->floor_name }}</a></h5>
                     </div>
 
                     <div class="overflow-hidden">
-                      <p class="py-3 mb-0" data-zanim-xs='{"delay":0.2}'>{!! $floor->floor_description !!}</p>
+                      <p class="py-3 mb-0">{!! $floor->floor_description !!}</p>
                     </div>
                   </div>
                 </div>

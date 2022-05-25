@@ -12,4 +12,7 @@ class Floor extends Model
     public function floor(){
         return $this->belongsTo(room::class);
     }
+    public function order(){
+        return $this->belongsTo(Order::class,'floor_id','id');
+    }
 }
