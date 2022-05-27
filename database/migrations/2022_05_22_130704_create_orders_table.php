@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string('value1')->default('BD');
             $table->unsignedBigInteger('floor_id')->default(1);
             $table->unsignedBigInteger('room_id')->default(1);
+            $table->enum('condition',['pending','processing','accept', 'cancelled'])->default('pending');
+            $table->string('customer_photo')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

@@ -28,6 +28,8 @@ class orderFactory extends Factory
             'customer_postcode'=>$this->faker->numberBetween('10000,10000'),
             'floor_id'=>$this->faker->randomElement(Floor::pluck('id')->toArray()),
             'room_id'=>$this->faker->randomElement(room::pluck('id')->toArray()),
+            'condition'=>$this->faker->randomElement(['pending','processing','accept', 'cancelled']),
+            'customer_photo'=>$this->faker->imageUrl('300','300'),
             'status'=>$this->faker->randomElement(['1','0']),
         ];
     }

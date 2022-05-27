@@ -68,11 +68,6 @@
           <span><i class="fas fa-clipboard-list"></i>User Managment</span>
         </a>
       </li>
-      <li class="menu-item">
-        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order-page" aria-expanded="false" aria-controls="order-page">
-          <span><i class="fas fa-clipboard-list"></i>Order</span>
-        </a>
-      </li>
       <!-- /order page -->
 
     </ul>

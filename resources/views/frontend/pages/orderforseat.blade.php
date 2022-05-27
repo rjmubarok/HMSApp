@@ -38,8 +38,9 @@
                                     @enderror
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <input class="form-control @error('customer_phone') is-invalid @enderror" type="text"
-                                        name="customer_phone" placeholder="Phone" aria-label="Phone" value="" />
+                                    <input class="form-control @error('customer_phone') is-invalid @enderror"
+                                        type="text" name="customer_phone" placeholder="Phone" aria-label="Phone"
+                                        value="" />
                                     @error('customer_phone')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -62,7 +63,8 @@
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label for="">Address</label><input class="form-control @error('customer_address') is-invalid @enderror" type="text"
+                                    <label for="">Address</label><input
+                                        class="form-control @error('customer_address') is-invalid @enderror" type="text"
                                         placeholder="Address" name="customer_address" aria-label="Last Name" />
                                     @error('customer_address')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -108,11 +110,27 @@
                                 </div>
                                 <input class="form-control" name="amount" value="500" aria-label="Last Name" hidden />
                                 <div class="col-12 col-md-6"><input
-                                        class="form-control @error('customer_postcode') is-invalid @enderror" type="text"
-                                        placeholder="Zipecode" name="customer_postcode" aria-label="Last Name" />
+                                        class="form-control @error('customer_postcode') is-invalid @enderror"
+                                        type="text" placeholder="Zipecode" name="customer_postcode"
+                                        aria-label="Last Name" />
                                     @error('customer_postcode')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+                                <label> Room Photo </label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a id="lfm" data-input="thumbnail" data-preview="holder"
+                                            class="btn btn-success">
+                                            <i class="fa fa-picture-o"></i> Choose Photo for Your Profile
+                                        </a>
+                                    </span>
+                                    <input id="thumbnail" class="form-control" type="text" name="customer_photo" hidden
+                                        value="">
+                                    @error('customer_photo')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <div id="holder" style="max-height:80px;"> </div>
                                 </div>
                             </div>
                             <div class="row align-items-center mt-3">
@@ -138,4 +156,10 @@
         </div>
     </div><!-- end of .container-->
 </section>
+@endsection
+@section('scripts')
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script>
+        $('#lfm ,#lfm1').filemanager('image');
+    </script>
 @endsection

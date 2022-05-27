@@ -18,7 +18,7 @@
   <script src="{{ asset('frontend') }}/assets/js/coustom.js"></script>
   <script src="{{ asset('frontend') }}/vendors/swiper/swiper-bundle.min.js"></script>
   <script src="{{ asset('frontend') }}/assets/js/owl.carousel.min.js"></script>
-
+@yield('scripts')
 </body>
 
 </html>

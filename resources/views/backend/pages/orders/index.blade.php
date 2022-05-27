@@ -18,12 +18,10 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone</th>
-                                    <th scope="col">City</th>
-                                    <th scope="col">Address</th>
-                                    <th scope="col">Post Code</th>
-                                    <th scope="col">Ammount</th>
                                     <th scope="col">Date of Birth</th>
                                     <th scope="col">Floor</th>
+                                    <th scope="col">Condition</th>
+                                    <th scope="col">Photo</th>
                                     <th scope="col">Room</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -35,14 +33,13 @@
                                     <td>{{ $item->customer_name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->customer_phone }}</td>
-                                    <td>{{ $item->customer_city }}</td>
-                                    <td>{{ $item->customer_address }}</td>
-                                    <td>{{ $item->customer_postcode }}</td>
-                                    <td>{{ $item->amount }}</td>
                                     <td>{{ $item->dob }}</td>
                                     <td>{{ $item->floor->floor_name }}</td>
+                                    <td>{{ $item->condition }}</td>
+                                    <td><img src="{{ $item->customer_photo}}" alt="{{ $item->customer_name }}" height="50"></td>
                                     <td>{{$item->room->room_number }}</td>
                                     <td class="d-flex text-center">
+                                        <a data-toggle="tooltip" title="View"  data-placement="bottom" href="{{ route('order.show',$item->id) }}" class=" ms-btn-icon btn-info btn-sm btn-outline-info"><i class="fas fa-eye ml-2"></i></a>
                                         <form action="{{route('order.destroy',$item->id)}}" method="POST"
                                             class="float-left ">
                                             @method('DELETE')

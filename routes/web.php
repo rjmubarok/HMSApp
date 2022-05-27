@@ -52,6 +52,7 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::resource('room',RoomController::class);
     //room
     Route::resource('order',OrderController::class);
+    Route::post('order-status', [OrderController::class ,'changeStatus'])->name('order.status');
     //room
     Route::get('user',[userController::class,'index'])->name('user.index');
     Route::get('user/{id}',[userController::class,'destroy'])->name('user.destroy');
@@ -59,3 +60,6 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::get('setting', [SettingController::class,'setting'])->name('setting');
     Route::put('seting-update',[SettingController::class, 'setingUpdate'])->name('seting.update');
  });
+ Route::group(['prefix'=>'filemanager','middleware'=>['web']], function(){
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+    });

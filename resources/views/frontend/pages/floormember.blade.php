@@ -9,9 +9,9 @@
           </div>
           <div class="row">
               @foreach ($members as $member)
-              <div class="col-md-6 col-lg-4 mt-4">
+              <div class="col-md-4 col-lg-3 mt-4">
                 <div class="px-3 py-4 px-lg-4">
-                  <div class="overflow-hidden"><img src="../assets/img/icons/sharing.png" alt="" height="37" data-zanim-xs='{"delay":0}' /></div>
+                  <div class="overflow-hidden"><img src="{{ $member->customer_photo }}" alt="{{ $member->customer_name }}" height="300" /></div>
                   <div class="overflow-hidden">
                     <h5 class="mt-3">{{ $member->customer_name }}</h5>
                   </div>

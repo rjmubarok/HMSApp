@@ -45,9 +45,15 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        //
+        $order = Order::find($id);
+       // return $orders;
+        if($order){
+            return view('backend.pages.orders.view', compact('order'));
+        }else{
+            return back();
+        }
     }
 
     /**
@@ -148,6 +154,25 @@ class OrderController extends Controller
         $data = $shurjopay_service->verify($order_id);
         return view('frontend.pages.success_page');
         //return view('frontend.pages.success_page');
+
+    }
+
+
+
+    public function changeStatus(Request $request)
+    {
+        //return $request->input('order_id');
+        $order = Order::find($request->input('order_id'));
+        if ($order) {
+            $status = Order::where('id', $request->input('order_id'))->update(['condition' => $request->input('condition')]);
+            if ($status) {
+                return back()->with('success', ' Successfully Updated');
+            } else {
+                return back()->with('error', 'something went wrong !!');
+            }
+        } else {
+            abort(404);
+        }
 
     }
 }
