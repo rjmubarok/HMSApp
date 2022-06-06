@@ -24,7 +24,7 @@
                             <div class="row align-items-center g-4">
                                 <div class="col-12 col-md-6">
                                     <input class="form-control @error('customer_name') is-invalid @enderror" type="text"
-                                        name="customer_name" placeholder="name" aria-label="First Name" value="" />
+                                        name="customer_name" placeholder="name" aria-label="First Name" value="" required />
                                     @error('customer_name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -32,7 +32,7 @@
                                 <div class="col-12 col-md-6">
                                     <input class="form-control @error('customer_name') is-invalid @enderror"
                                         type="email" name="email" placeholder="Email Address" aria-label="Email Address"
-                                        value="" />
+                                        value="" required />
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -40,7 +40,7 @@
                                 <div class="col-12 col-md-6">
                                     <input class="form-control @error('customer_phone') is-invalid @enderror"
                                         type="text" name="customer_phone" placeholder="Phone" aria-label="Phone"
-                                        value="" />
+                                        value="" required />
                                     @error('customer_phone')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -48,7 +48,7 @@
 
                                 <div class="col-12 col-md-6">
                                     <input class="form-control @error('customer_city') is-invalid @enderror" type="text"
-                                        name="customer_city" placeholder="City" aria-label="City" />
+                                        name="customer_city" placeholder="City" aria-label="City" required />
                                     @error('customer_city')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -56,7 +56,7 @@
                                 <div class="col-12 col-md-6">
                                     <label for="">Date Of Birth</label><input
                                         class="form-control @error('dob') is-invalid @enderror" type="date"
-                                        placeholder="Date Of Birth" name="dob" />
+                                        placeholder="Date Of Birth" name="dob" required />
                                     @error('dob')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -65,7 +65,7 @@
                                 <div class="col-12 col-md-6">
                                     <label for="">Address</label><input
                                         class="form-control @error('customer_address') is-invalid @enderror" type="text"
-                                        placeholder="Address" name="customer_address" aria-label="Last Name" />
+                                        placeholder="Address" name="customer_address" aria-label="Last Name"  required/>
                                     @error('customer_address')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -74,7 +74,7 @@
                                     <div class="form-group ">
                                         <label> <span class=""> Select floor</span></label>
                                         <select name="floor_id" id=""
-                                            class="form-control @error('floor_id') is-invalid @enderror">
+                                            class="form-control @error('floor_id') is-invalid @enderror" required>
                                             <option value="" style="display: none;" selected> -- floor --</option>
                                             @foreach ($floors as $floor)
                                             <option value=" {{ $floor->id }} " {{old('floor_id')==$floor->id ?
@@ -93,7 +93,7 @@
                                     <div class="form-group ">
                                         <label> <span class=""> Select Room Number</span></label>
                                         <select name="room_id" id=""
-                                            class="form-control @error('room_id') is-invalid @enderror">
+                                            class="form-control @error('room_id') is-invalid @enderror" required>
                                             <option value="" style="display: none;" selected> -- Room Number--</option>
                                             @foreach ($rooms as $room)
                                             <option value=" {{ $room->id }} " {{old('room_id')==$room->id ?
@@ -117,7 +117,7 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <label> Room Photo </label>
+                                <label>  Photo </label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="lfm" data-input="thumbnail" data-preview="holder"

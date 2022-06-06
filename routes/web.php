@@ -30,6 +30,7 @@ Route::get('/',[Indexcontroller::class,'index'])->name('/');
 Route::get('/aboute',[Indexcontroller::class,'aboute'])->name('aboute');
 Route::get('/contact',[Indexcontroller::class,'contact'])->name('contact');
 Route::get('--/{slug}',[Indexcontroller::class,'floorMember'])->name('floormember')->middleware('user');
+Route::get('member-view/{id}',[Indexcontroller::class,'MemberView'])->name('member.view');
 
 //Auth::routes(['register'=>false]);
 Auth::routes();
@@ -37,10 +38,11 @@ Auth::routes();
 Route::get('/CallGitHub',[SocialiteloginController::class,'CallGitHub'])->name('CallGitHub');
 Route::get('/GithubCallBack',[SocialiteloginController::class,'GithubCallBack']);
 Route::get('apply-for-seat',[Indexcontroller::class,'applyeForSet'])->name('apply.for.seat');
+
 Route::post('payment', [OrderController::class,'initiatePayment'])->name('payment');
-// Route::post('payment', [Indexcontroller::class,'storeorder'])->name('payment');
+
 Route::get('success-url', [OrderController::class,'verifyPayment']);
-//  Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::get('/', [AdminController::class,'admin'])->name('admin');

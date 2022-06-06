@@ -48,17 +48,17 @@ public function floorMember($slug){
     }else{
         return back();
     }
-
-
-    // $categories = Category::where('slug', $slug)->first();
-    //     if($categories && $categories->slug == $slug){
-    //      $services=  Service::where('category_id',$categories->id)->get();
-    //      $courses=  Course::where('category_id',$categories->id)->get();
-    //      $bussiness=  Bussiness::where('category_id',$categories->id)->get();
-
-    //     }
-    //     return view('site.pages.servicesSinglepage', compact(['services','categories','courses','bussiness']));
 }
+public function MemberView($id){
+  //  return $id;
+  $member=Order::where('id', $id)->with('room','floor')->first();
+ // return $member;
+  if($member){
+    return view('frontend.pages.memberview', compact('member'));
+  }else{
+      return back()->with('error','Page Cant Open at the moment Please Try again !');
+  }
 
+}
 
 }

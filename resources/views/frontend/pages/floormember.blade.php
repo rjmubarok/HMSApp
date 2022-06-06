@@ -11,9 +11,9 @@
               @foreach ($members as $member)
               <div class="col-md-4 col-lg-3 mt-4">
                 <div class="px-3 py-4 px-lg-4">
-                  <div class="overflow-hidden"><img src="{{ $member->customer_photo }}" alt="{{ $member->customer_name }}" height="300" /></div>
+                  <div class="overflow-hidden"><img src="{{ $member->customer_photo }}" alt="{{ $member->customer_name }}" class="img-thumbnail img-responsive" /></div>
                   <div class="overflow-hidden">
-                    <h5 class="mt-3">{{ $member->customer_name }}</h5>
+                   <a href="{{ route('member.view',$member->id) }}"> <h5 class="mt-3">{{ $member->customer_name }}</h5></a>
                   </div>
                   <div class="overflow-hidden">
                     <p class="mb-0">{{ $member->customer_phone }}</p>
