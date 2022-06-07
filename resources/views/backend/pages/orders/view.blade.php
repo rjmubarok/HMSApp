@@ -44,11 +44,11 @@
                     </div>
                     <div class="row">
                         <strong class="col-3 col-md-3">Floor</strong>
-                        <strong class="col-9 col-md-9">{{ $order->floor->floor_name }}</strong>
+                        <strong class="col-9 col-md-9">{{ $order->floor->floor_name ??'N\A' }}</strong>
                     </div>
                     <div class="row">
                         <strong class="col-3 col-md-3">Room No:</strong>
-                        <strong class="col-9 col-md-9">{{$order->room->room_number }}</strong>
+                        <strong class="col-9 col-md-9">{{$order->room->room_number ?? 'N\A'}}</strong>
                     </div>
                     <div class="row">
                         <strong class="col-3 col-md-3">Photo</strong>

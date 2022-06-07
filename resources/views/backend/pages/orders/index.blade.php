@@ -34,10 +34,10 @@
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->customer_phone }}</td>
                                     <td>{{ $item->dob }}</td>
-                                    <td>{{ $item->floor->floor_name }}</td>
+                                    <td>{{ $item->floor->floor_name ??'N\A'}}</td>
                                     <td>{{ $item->condition }}</td>
                                     <td><img src="{{ $item->customer_photo}}" alt="{{ $item->customer_name }}" height="50"></td>
-                                    <td>{{$item->room->room_number }}</td>
+                                    <td>{{$item->room->room_number ??'N\A'}}</td>
                                     <td class="d-flex text-center">
                                         <a data-toggle="tooltip" title="View"  data-placement="bottom" href="{{ route('order.show',$item->id) }}" class=" ms-btn-icon btn-info btn-sm btn-outline-info"><i class="fas fa-eye ml-2"></i></a>
                                         <form action="{{route('order.destroy',$item->id)}}" method="POST"

@@ -18,6 +18,10 @@
   <script src="{{ asset('frontend') }}/assets/js/coustom.js"></script>
   <script src="{{ asset('frontend') }}/vendors/swiper/swiper-bundle.min.js"></script>
   <script src="{{ asset('frontend') }}/assets/js/owl.carousel.min.js"></script>
+
+  <script src="{{ asset('frontend') }}/assets/js/carts/Chart.bundle.min.js"> </script>
+  <script src="{{ asset('frontend') }}/assets/js/carts/Chart.Financial.js"> </script>
+  <script src="{{ asset('frontend') }}/assets/js/carts/index-chart.js"> </script>
 @yield('scripts')
 </body>
 
