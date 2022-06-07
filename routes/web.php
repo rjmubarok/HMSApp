@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\SocialiteloginController;
 use App\Http\Controllers\FloorController;
 use App\Http\Controllers\Indexcontroller;
+use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SettingController;
@@ -47,7 +48,8 @@ Route::get('success-url', [OrderController::class,'verifyPayment']);
 Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
     Route::get('/', [AdminController::class,'admin'])->name('admin');
     //Slide And Notice
-    Route::resource('slide-notice',SliderController::class);
+    Route::resource('slide',SliderController::class);
+    Route::resource('notice',NoticeController::class);
     //floor
     Route::resource('floor',FloorController::class);
     //room

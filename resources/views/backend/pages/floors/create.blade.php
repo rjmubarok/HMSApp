@@ -12,7 +12,8 @@
                 enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="floor_name">Floor Name</label>
+
+                    <label for="floor_name">Floor Name </label>
                     <input   class="form-control  @error('floor_name') is-invalid @enderror" name="floor_name" {{ old('floor_name') }} placeholder="Floor Name">
                     @error('floor_name')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -32,7 +33,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 </div>
-                <label> Floor Photo </label>
+                <label> Floor Photo <small class="text-warning">Rendered size:	348 × 348 px</small></label>
                 <div class="input-group">
                     <span class="input-group-btn">
                         <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">

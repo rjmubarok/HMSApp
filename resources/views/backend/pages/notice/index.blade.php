@@ -3,8 +3,8 @@
 <div class="col-md-12 ">
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Sliders </h6>
-            <a href="{{ route('slide.create') }}" class="btn btn-primary">Add Slider </a>
+            <h6>Notice </h6>
+            <a href="{{ route('notice.create') }}" class="btn btn-primary">Add Notice </a>
         </div>
         @include('backend.layouts.notification')
         <div class="col-xl-12 col-md-12">
@@ -16,19 +16,19 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Slide Photo</th>
+                        <th scope="col">Notice Text</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sliders as $item)
+                        @foreach ($notice as $item)
                       <tr>
                         <th scope="row">{{$loop->iteration}}</th>
-                        <td><img src="{{ $item->slide_photo }}" alt=""></td>
+                        <td>{!! $item->notice !!}</td>
                         <td>
                             @if ( $item->status==1 )
-                            <span class="badge badge-pill badge-success">Active</span>
+                            <span class="badge badge-pill badge-info">Active</span>
 
                             @else
                             <span class="badge badge-pill badge-danger">Inactive</span>
@@ -36,10 +36,10 @@
                         </td>
 
                             <td class="d-flex text-center">
-                                <a href="{{route('slide.edit',$item->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom"  class=" ms-btn-icon btn-info">
+                                <a href="{{route('notice.edit',$item->id)}}" data-toggle="tooltip" title="Edit" data-placement="bottom"  class=" ms-btn-icon btn-info">
                                     <i class="fas fa-edit ml-2"></i>
                                      </a>
-                              <form action="{{route('slide.destroy',$item->id)}}" method="POST" class="float-left ">
+                              <form action="{{route('notice.destroy',$item->id)}}" method="POST" class="float-left ">
                                   @method('DELETE')
                                    @csrf
                                   <a href="" data-id=" {{$item->id}} " data-toggle="tooltip" title="Delete" data-placement="bottom" class=" dltbtn ms-btn-icon btn-danger btn-sm btn-outline-danger"> <i class="fas fa-trash-alt ml-2"></i> </a>

@@ -3,24 +3,18 @@
 <div class="col-md-12">
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Sliders</h6>
-            <a href="{{ route('slide.index') }}" class="btn btn-primary">All Slider </a>
+            <h6>Notice</h6>
+            <a href="{{ route('notice.index') }}" class="btn btn-primary">All Notice </a>
         </div>
         @include('backend.layouts.notification')
         <div class="ms-panel-body">
-            <form id="basic-form" method="post" action="{{ route('slide.store') }}"
+            <form id="basic-form" method="post" action="{{ route('notice.store') }}"
                 enctype="multipart/form-data">
                 @csrf
-                <label> Slider Photo  <small class="text-warning"> Rendered size:800 × 500 px </small></label>
-
+                <label> Notice Text </label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Slide
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="slide_photo" hidden value="">
-                    @error('slide_photo')
+                    <textarea name="notice" id="summernote" cols="30" rows="10"> Notice </textarea>
+                    @error('notice')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 </div>
@@ -44,17 +38,13 @@
                 @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success btn-pill">Add Slide</button>
+                <button type="submit" class="btn btn-success btn-pill">Add Notice</button>
             </form>
         </div>
     </div>
 </div>
 @endsection
 @section('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-<script>
-    $('#lfm,#lfm1,#lfm2').filemanager('image');
-</script>
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();

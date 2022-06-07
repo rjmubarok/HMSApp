@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Floor;
+use App\Models\Notice;
 use App\Models\Order;
 use App\Models\room;
 use App\Models\Slider;
@@ -14,7 +15,8 @@ class Indexcontroller extends Controller
     public function index(){
         $sliders = Slider::where(['status'=>1])->orderBy('id','DESC')->limit(4)->get();
         $floors = Floor::where(['status'=>1])->orderBy('id','DESC')->get();
-        return view('frontend.pages.index', compact(['sliders','floors']));
+        $notices = Notice::where(['status'=>1])->orderBy('id','DESC')->get();
+        return view('frontend.pages.index', compact(['sliders','floors','notices']));
     }
     public function applyeForSet(){
         $rooms=room::where('status',1)->orderBy('id','DESC')->get();

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Slider;
+use App\Models\Notice;
 use Illuminate\Http\Request;
-use Illuminate\support\Str;
-class SliderController extends Controller
+
+class NoticeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders= Slider::all();
-        return view('backend.pages.slide_notice.index', compact('sliders'));
+        $notice= Notice::all();
+        return view('backend.pages.notice.index', compact('notice'));
     }
 
     /**
@@ -25,7 +25,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.slide_notice.create');
+        return view('backend.pages.notice.create');
     }
 
     /**
@@ -36,19 +36,15 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-         // return $request->all();
-         $this->validate($request,[
-            'slide_photo'=>'required',
+        $this->validate($request,[
+            'notice'=>'required',
 
         ]);
 
         $data = $request->all();
-        $slug = Str::slug($request->input('notice').'-'.time());
-         Slider::where('slug', $slug);
-       $data['slug'] = $slug;
-        $slider = Slider::create($data);
-        if($slider){
-            return redirect()->route('slide.index')->with('success', 'Slide And Notice  Added Successfully');
+        $notice = notice::create($data);
+        if($notice){
+            return redirect()->route('notice.index')->with('success', ' Notice  Added Successfully');
         }else{
             return back()->with('error', 'Something went Wrong');
         }
@@ -57,10 +53,10 @@ class SliderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Slider  $slider
+     * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function show(Slider $slider)
+    public function show(Notice $notice)
     {
         //
     }
@@ -68,14 +64,14 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Slider  $slider
+     * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slider $slider, $id)
+    public function edit($id)
     {
-        $slider = Slider::find($id);
-        if($slider){
-            return view('backend.pages.slide_notice.edit', compact('slider'));
+        $notice = Notice::find($id);
+        if($notice){
+            return view('backend.pages.notice.edit', compact('notice'));
         }else{
             return back()->with('error', 'Something went wrong');
         }
@@ -85,23 +81,21 @@ class SliderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Slider  $slider
+     * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $slider = Slider::find($id);
-        if($slider){
+        $notice = Notice::find($id);
+        if($notice){
 
             $this->validate($request,[
                 'notice'=>'required',
-            'slide_photo'=>'required',
-
             ]);
             $data = $request->all();
-            $slider = $slider->fill($data)->save();
-            if($slider){
-                return redirect()->route('slide.index')->with('success', 'Slider Update Successfully');
+            $notice = $notice->fill($data)->save();
+            if($notice){
+                return redirect()->route('notice.index')->with('success', 'notice Update Successfully');
             }else{
                 return back()->with('error', 'Something went Wrong');
             }
@@ -116,16 +110,16 @@ class SliderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Slider  $slider
+     * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider, $id)
+    public function destroy($id)
     {
-        $slider = slider::find($id);
-        if($slider){
-           $status= $slider->delete();
+        $notice = Notice::find($id);
+        if($notice){
+           $status= $notice->delete();
             if($status){
-                return redirect()->route('slide.index')->with('success', 'Slider Delete Successfully');
+                return redirect()->route('notice.index')->with('success', 'Notice Delete Successfully');
             }else{
                 return back()->with('error','Please Try Again');
             }

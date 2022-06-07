@@ -33,7 +33,7 @@
                     <div class="alert alert-danger" >{{ $message }}</div>
                 @enderror
                 </div>
-                <label> Floor Photo </label>
+                <label> Floor Photo <small class="text-warning">Rendered size:	348 × 348 px</small></label>
                 <div class="input-group">
                     <span class="input-group-btn">
                         <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">

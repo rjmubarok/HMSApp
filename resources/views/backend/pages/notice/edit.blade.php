@@ -1,43 +1,35 @@
 @extends('backend.layouts.master')
 @section('admin-content')
-<div class="col-md-8 offset-2">
+<div class="col-md-12">
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Slider </h6>
-            <a href="{{ route('slide.index') }}" class="btn btn-primary">All Slider</a>
+            <h6>Notice </h6>
+            <a href="{{ route('slide.index') }}" class="btn btn-primary">All Notice</a>
         </div>
         @include('backend.layouts.notification')
         <div class="ms-panel-body">
-            <form id="basic-form" method="post" action="{{ route('slide.update', $slider->id) }}"
+            <form id="basic-form" method="post" action="{{ route('notice.update', $notice->id) }}"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <label> Slider Photo  <small class="text-warning">Rendered size:800 × 500 px </small></label>
+                <label> Notice text </label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Slide
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="slide_photo" hidden value="{{ $slider->slide_photo }}">
-                    <img src="{{ $slider->slide_photo }}" alt="" style="max-width: 100px;">
-                    @error('slide_photo')
+                    <textarea name="notice" id="summernote" cols="30" rows="10" >{{ $notice->notice }}</textarea>
+                    @error('notice')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 </div>
-                <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
-
                 <div class="form-group">
                     <label for="notice">Status</label>
                     <br>
                     <label class="ms-checkbox-wrap ms-checkbox-success">
-                        <input type="radio" value="1" name="status" {{ $slider->status == '1' ? 'checked' :
+                        <input type="radio" value="1" name="status" {{ $notice->status == '1' ? 'checked' :
                         '' }}>
                         <i class="ms-checkbox-check"></i>
                     </label>
                     <span> Active </span>
                     <label class="ms-checkbox-wrap ms-checkbox-danger">
-                        <input type="radio" value="0" name="status" {{ $slider->status == '0' ? 'checked' :
+                        <input type="radio" value="0" name="status" {{ $notice->status == '0' ? 'checked' :
                         '' }}>
                         <i class="ms-checkbox-check"></i>
                     </label>
@@ -47,7 +39,7 @@
                 @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success btn-pill">Update Slide</button>
+                <button type="submit" class="btn btn-success btn-pill">Update Notice</button>
             </form>
         </div>
     </div>

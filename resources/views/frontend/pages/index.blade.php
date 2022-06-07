@@ -5,7 +5,7 @@
       <h3 class="main-title content-border">Notice Board</h3>
         <div class="item">
           <div class="print-media-carousel owl-carousel owl-theme ">
-              @foreach ($sliders as $notice )
+              @foreach ($notices as $notice )
               <p>{!! $notice->notice !!}</p>
               @endforeach
           </div>

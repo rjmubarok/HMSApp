@@ -30,11 +30,20 @@
       </li>
       <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#Noice" aria-expanded="false" aria-controls="Noice">
-          <span><i class="fas fa-clipboard-list"></i>Slide & Notice Board</span>
+          <span><i class="fas fa-clipboard-list"></i>Slider </span>
         </a>
         <ul id="Noice" class="collapse" aria-labelledby="Noice" data-parent="#side-nav-accordion">
-          <li> <a href="{{ route('slide-notice.create') }}">Add Slide & Noice</a> </li>
-          <li> <a href="{{ route('slide-notice.index') }}">All Slide & Noice</a> </li>
+          <li> <a href="{{ route('slide.create') }}">Add Slide </a> </li>
+          <li> <a href="{{ route('slide.index') }}">All Slide </a> </li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#Noice" aria-expanded="false" aria-controls="Noice">
+          <span><i class="fas fa-clipboard-list"></i>Notice Board</span>
+        </a>
+        <ul id="Noice" class="collapse" aria-labelledby="Noice" data-parent="#side-nav-accordion">
+          <li> <a href="{{ route('notice.create') }}">Add Noice</a> </li>
+          <li> <a href="{{ route('notice.index') }}">All Noice</a> </li>
         </ul>
       </li>
       <li class="menu-item">
