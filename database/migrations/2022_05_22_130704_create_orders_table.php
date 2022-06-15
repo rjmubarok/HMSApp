@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('currency')->default('BDT');
             $table->integer('amount')->default(0);
             $table->string('dob')->nullable();
+            $table->string('studentID')->unique();
             $table->integer('order_id')->nullable();
             $table->string('customer_name')->default('Abdullah');
             $table->string('customer_phone')->default('0147');

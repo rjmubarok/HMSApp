@@ -107,6 +107,7 @@ class OrderController extends Controller
             'customer_name'=>'required|string',
             'customer_phone'=>'required',
             'customer_address'=>'required',
+            'studentID'=>'required',
             'customer_city'=>'required',
             'customer_postcode'=>'required',
             'floor_id'=>'required',

@@ -8,12 +8,13 @@ $(document).ready(function () {
         nav: false,
         dots: false,
         loop: true,
+        delay:30,
         autoplay: true,
         slideTransition: 'linear',
-        autoplayHoverPause:false,
-        autoplayTimeout: 4000,
+        autoplayHoverPause:true,
+        // autoplayTimeout: 4000,
         autoplaySpeed: 7000,
-        
+
         responsive: {
             0: {
                 items: 1,

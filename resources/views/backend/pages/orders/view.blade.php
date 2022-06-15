@@ -15,6 +15,10 @@
                         <strong class="col-9 col-md-9">{{ $order->customer_name }}</strong>
                     </div>
                     <div class="row">
+                        <strong class="col-3 col-md-3">Student ID</strong>
+                        <strong class="col-9 col-md-9">{{ $order->studentID }}</strong>
+                    </div>
+                    <div class="row">
                         <strong class="col-3 col-md-3">Email</strong>
                         <strong class="col-9 col-md-9">{{ $order->email }}</strong>
                     </div>

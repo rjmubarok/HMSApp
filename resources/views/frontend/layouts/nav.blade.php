@@ -13,9 +13,9 @@
         </div>
     </div>
 </div>
-<div class="sticky-top navbar-elixir">
+<div class="sticky-top navbar-elixir shadow">
     <div class="container">
-        <nav class="navbar navbar-expand-lg"> <a class="navbar-brand" href="{{ route('/') }}"><img
+        <nav class="navbar navbar-expand-lg "> <a class="navbar-brand" href="{{ route('/') }}"><img
                     src="{{ asset('frontend') }}/assets/images/b-6.png" alt="logo" /></a><button
                 class="navbar-toggler p-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false"
@@ -23,7 +23,7 @@
                         class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
             <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
                 <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-                    <li class="nav-item "><a class="nav-link " href="{{ route('/') }}">Home</a>
+                    <li class="nav-item "><a class="nav-link hover" href="{{ route('/') }}">Home</a>
                     </li>
                     <li class="nav-item "><a class="nav-link " href="{{ route('aboute') }}">About</a>
                     </li>
@@ -31,6 +31,17 @@
                     </li>
                     <li class="nav-item dropdown"><a class="nav-link" href="{{ route('contact') }}">Contact us</a></li>
                 </ul>
+                <form action="{{ route('search') }}" method="POST">
+                    @csrf
+                    <div class="input-group  d-flex">
+                        <div id="navbar-search-autocomplete" class="form-outline">
+                          <input type="search" placeholder="Search" id="form1" name="search" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-sm bg-04432e">
+                          <i class="fas fa-search text-100"></i>
+                        </button>
+                      </div>
+                </form>
                 @auth
                 {{-- <a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0"
                     href="{{ route('login') }}">{{ Auth::user()->name }}</a> --}}
@@ -38,7 +49,7 @@
                         <li class="nav-item dropdown " style="list-style: none;"><a class="nav-link dropdown-toggle dropdown-indicator"
                             href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->name }}</a>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="pages/service.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="">Profile</a></li>
 
                             <li >
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -66,3 +77,4 @@
         </nav>
     </div>
 </div>
+

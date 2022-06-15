@@ -8,7 +8,7 @@
             <div class="col-md-10 col-lg-10 mx-auto">
                 <div class="card">
                     @include('backend.layouts.notification')
-                    {{-- @if ($errors->any())
+                    @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -16,7 +16,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    @endif --}}
+                    @endif
                     <div class="card-body p-md-5">
                         <h4 class="text-uppercase fs-0 fs-md-1">Applay For Seat</h4>
                         <form class="text-start mt-4" action="{{ route('payment') }}" method="post">
@@ -30,7 +30,14 @@
                                     @enderror
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <input class="form-control @error('customer_name') is-invalid @enderror"
+                                    <input class="form-control @error('studentID') is-invalid @enderror" type="text"
+                                        name="studentID" placeholder="Student ID" aria-label="First Name" value="" required />
+                                    @error('studentID')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input class="form-control @error('email') is-invalid @enderror"
                                         type="email" name="email" placeholder="Email Address" aria-label="Email Address"
                                         value="" required />
                                     @error('email')

@@ -25,6 +25,7 @@ class orderFactory extends Factory
             'customer_city'=>$this->faker->name(),
             'dob'=>$this->faker->date(),
             'customer_phone'=>$this->faker->numberBetween('10000000000,10000000000'),
+            'studentID'=>$this->faker->numberBetween('100000000,10000000000000'),
             'customer_postcode'=>$this->faker->numberBetween('10000,10000'),
             'floor_id'=>$this->faker->randomElement(Floor::pluck('id')->toArray()),
             'room_id'=>$this->faker->randomElement(room::pluck('id')->toArray()),

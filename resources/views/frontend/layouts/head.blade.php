@@ -24,7 +24,7 @@
   <link href="vendors/prism/prism.css" rel="stylesheet">
   <link href="vendors/hamburgers/hamburgers.min.css" rel="stylesheet">
   <link href="vendors/loaders.css/loaders.min.css" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="{{ asset('frontend') }}/vendors/owl-carousel/owl.carousel.min.css">
   <link rel="stylesheet" href="{{ asset('frontend') }}/vendors/owl-carousel/owl.theme.default.css">
   <link rel="stylesheet" href="./{{ asset('frontend') }}/assets/css/jquery-ui.min.css">
@@ -36,4 +36,5 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Open+Sans:wght@300;400;600;700;800&amp;display=swap"
     rel="stylesheet">
+    @yield('styles')
 </head>

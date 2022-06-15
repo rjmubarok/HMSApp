@@ -6,7 +6,7 @@
         <div class="panel-body inf-content">
             <div class="row">
                 <div class="col-md-4">
-                    <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ $member->customer_photo }}" data-original-title="Usuario">
+                    <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ $member->customer_photo }} ?? ''" data-original-title="Usuario">
                     <ul title="Ratings" class="list-inline ratings text-center">
                         <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
@@ -29,6 +29,17 @@
                                 </td>
                                 <td class="text-primary">
                                     {{ $member->customer_name }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                        Student  ID :
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ $member->studentID }}
                                 </td>
                             </tr>
                             <tr>
