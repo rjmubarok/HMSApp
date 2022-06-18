@@ -13,7 +13,7 @@
                 @csrf
                 <label> Notice Text </label>
                 <div class="input-group">
-                    <textarea name="notice" id="summernote" cols="30" rows="10"> Notice </textarea>
+                    <textarea name="notice" class="form-control" cols="10" rows="5"> Notice </textarea>
                     @error('notice')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

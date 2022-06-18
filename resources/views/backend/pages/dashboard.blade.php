@@ -51,34 +51,7 @@
         </div>
       </div>
       <div class="col-md-12 col-xl-12">
-        <div class="ms-panel ms-panel-fh">
-          <div class="ms-panel-header ms-panel-custom align-items-center">
-            <h6>Orders Graph</h6>
-            <ul class="nav nav-tabs d-flex nav-justified mb-0" role="tablist">
-              <li><a href="#tab13" aria-controls="tab13" class=" pb-0" role="tab" data-toggle="tab" aria-selected="false"><i class="fas fa-chart-bar fa-2x "></i></a></li>
-              <li><a href="#tab14" aria-controls="tab14" role="tab" data-toggle="tab" class="active pb-0 show" aria-selected="true"><i class="fas fa-chart-line fa-2x "></i> </a></li>
-            </ul>
-          </div>
-          <div class="ms-panel-body clearfix">
-
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane fade in" id="tab13">
-                <div class="ms-panel-body">
-                  <canvas id="bar-chart"></canvas>
-                </div>
-              </div>
-              <div role="tabpanel" class="tab-pane fade active show" id="tab14">
-                <div class="ms-panel-body">
-                  <canvas id="line-chart"></canvas>
-                </div>
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="tab15">
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        
 
 
 

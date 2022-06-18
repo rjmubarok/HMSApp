@@ -103,6 +103,7 @@ class OrderController extends Controller
 
     public function initiatePayment(Request $request)
     {
+        //return $request->all();
         $this->validate($request,[
             'customer_name'=>'required|string',
             'customer_phone'=>'required',
@@ -112,13 +113,33 @@ class OrderController extends Controller
             'customer_postcode'=>'required',
             'floor_id'=>'required',
             'room_id'=>'required',
-            'customer_city'=>'required',
             'email'=>'required|email',
             'dob'=>'required',
+            'customer_photo'=>'required',
         ]);
 
-        $data= $request->all();
-        $info = Order::create($data);
+        $data              = new Order();
+        $data->customer_name = $request->customer_name;
+        $data->customer_phone = $request->customer_phone;
+        $data->customer_address = $request->customer_address;
+        $data-> studentID=$request->studentID;
+        $data-> customer_city=$request->customer_city;
+        $data-> customer_postcode=$request->customer_postcode;
+        $data-> floor_id=$request->floor_id;
+        $data-> room_id=$request->room_id;
+        $data-> email=$request->email;
+        $data-> dob=$request->dob;
+       
+        if($request->hasFile('customer_photo')){
+         $file = $request->file('customer_photo');
+         $ext = $file->getClientOriginalExtension();
+         $filename = uniqid().'.' .$ext;
+         $file->move('admin/uploads/', $filename);
+         $data->customer_photo = 'admin/uploads/'.$filename;
+     }
+        $data->save();
+
+        // $info = Order::create($data);
         $info = array(
             'currency' => "BDT",
             'amount' => 500,

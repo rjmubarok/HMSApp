@@ -19,7 +19,7 @@
                     @endif
                     <div class="card-body p-md-5">
                         <h4 class="text-uppercase fs-0 fs-md-1">Applay For Seat</h4>
-                        <form class="text-start mt-4" action="{{ route('payment') }}" method="post">
+                        <form class="text-start mt-4" action="{{ route('payment') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row align-items-center g-4">
                                 <div class="col-12 col-md-6">
@@ -126,18 +126,15 @@
                                 </div>
                                 <label>  Photo </label>
                                 <div class="input-group">
-                                    <span class="input-group-btn">
-                                        <a id="lfm" data-input="thumbnail" data-preview="holder"
-                                            class="btn btn-success">
-                                            <i class="fa fa-picture-o"></i> Choose Photo for Your Profile
-                                        </a>
-                                    </span>
-                                    <input id="thumbnail" class="form-control" type="text" name="customer_photo" hidden
-                                        value="">
+
+                                    <input type="file" class="form-control @error('customer_photo') validation-required @enderror"
+                                id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required
+                                name="customer_photo">
+                                    
                                     @error('customer_photo')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <div id="holder" style="max-height:80px;"> </div>
+
                                 </div>
                             </div>
                             <div class="row align-items-center mt-3">

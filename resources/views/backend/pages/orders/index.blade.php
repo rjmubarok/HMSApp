@@ -3,7 +3,7 @@
 <div class="col-md-12 ">
     <div class="ms-panel">
         <div class="ms-panel-header d-flex justify-content-between">
-            <h6>Order</h6>
+            <h6>Apply Student</h6>
         </div>
         @include('backend.layouts.notification')
         <div class="col-xl-12 col-md-12">
@@ -36,7 +36,7 @@
                                     <td>{{ $item->dob }}</td>
                                     <td>{{ $item->floor->floor_name ??'N\A'}}</td>
                                     <td>{{ $item->condition }}</td>
-                                    <td><img src="{{ $item->customer_photo}}" alt="{{ $item->customer_name }}" height="50"></td>
+                                    <td><img src="{{asset($item->customer_photo) }}" alt="{{ $item->customer_name }}" height="50"></td>
                                     <td>{{$item->room->room_number ??'N\A'}}</td>
                                     <td class="d-flex text-center">
                                         <a data-toggle="tooltip" title="View"  data-placement="bottom" href="{{ route('order.show',$item->id) }}" class=" ms-btn-icon btn-info btn-sm btn-outline-info"><i class="fas fa-eye ml-2"></i></a>

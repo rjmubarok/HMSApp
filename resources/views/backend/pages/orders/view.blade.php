@@ -56,7 +56,7 @@
                     </div>
                     <div class="row">
                         <strong class="col-3 col-md-3">Photo</strong>
-                        <strong class="col-9 col-md-9"><img src="{{ $order->customer_photo}}" alt="{{ $order->customer_name}}" style="max-height: 100px;"></strong>
+                        <strong class="col-9 col-md-9"><img src="{{ asset($order->customer_photo)}}" alt="{{ $order->customer_name}}" style="max-height: 100px;"></strong>
                     </div>
                     <div class="row">
                         <strong class="col-3 col-md-3">Condition</strong>

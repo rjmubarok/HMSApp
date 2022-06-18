@@ -47,7 +47,8 @@ Route::get('success-url', [OrderController::class,'verifyPayment']);
 
 
 Route::group(['prefix'=>'admin/','middleware'=>'auth'], function(){
-    Route::get('/', [AdminController::class,'admin'])->name('admin');
+
+    Route::get('/dashboard', [AdminController::class,'admin'])->name('admin');
     //Slide And Notice
     Route::resource('slide',SliderController::class);
     Route::resource('notice',NoticeController::class);

@@ -49,7 +49,7 @@
                 <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
                 <div class="form-group">
                     <label for="floor_description">Description</label>
-                    <textarea id="summernote" rows="" cols="2" class="form-control  @error('floor_description') is-invalid @enderror" name="floor_description" value="{{ $floor->floor_description }}">{{ $floor->floor_description }}</textarea>
+                    <textarea id="" rows="10" cols="5" class="form-control  @error('floor_description') is-invalid @enderror" name="floor_description" value="{{ $floor->floor_description }}">{{ $floor->floor_description }}</textarea>
                     @error('floor_description')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

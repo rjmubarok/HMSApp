@@ -14,7 +14,7 @@
                 @method('PUT')
                 <label> Notice text </label>
                 <div class="input-group">
-                    <textarea name="notice" id="summernote" cols="30" rows="10" >{{ $notice->notice }}</textarea>
+                    <textarea name="notice" id="" cols="10" rows="5" >{{ $notice->notice }}</textarea>
                     @error('notice')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
