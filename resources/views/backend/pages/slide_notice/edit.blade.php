@@ -12,20 +12,19 @@
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <label> Slider Photo  <small class="text-warning">Rendered size:800 × 500 px </small></label>
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Slide
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="slide_photo" hidden value="{{ $slider->slide_photo }}">
-                    <img src="{{ $slider->slide_photo }}" alt="" style="max-width: 100px;">
+
+                <div class="form-group col-6">
+                    <label> Slider Photo <small class="text-warning"> Rendered size:800 × 500 px </small></label>
+                    <br>
+                        <input  class="form-control" type="file" name="slide_photo" value="{{$slider->slide_photo  }}">
                     @error('slide_photo')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
+                    <div class="mt-3">
+                        <img src="{{ asset($slider->slide_photo) }}" alt="" height="100">
+                    </div>
+
                 </div>
-                <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
 
                 <div class="form-group">
                     <label for="notice">Status</label>
@@ -54,13 +53,5 @@
 </div>
 @endsection
 @section('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-<script>
-    $('#lfm,#lfm1,#lfm2').filemanager('image');
-</script>
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
+
 @endsection

@@ -26,28 +26,17 @@
                 </div>
                 <label> Logo </label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Logo
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="logo" hidden
-                        value="{{ $setting->logo }}">
-                    <img src="{{ $setting->logo }}" alt="" height="60">
+                    <input class="form-control" type="file" name="logo" value="{{ $setting->logo }}">
+                    <img src="{{ asset($setting->logo) }}" alt="" style="max-height: 60px; margin-top:10px;">
                 </div>
-                <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
+
                 <label> Favicon </label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm1" data-input="thumbnail1" data-preview="holder" class="btn btn-primary">
-                            <i class="fa fa-picture-o"></i> Choose for Favicon
-                        </a>
-                    </span>
-                    <input id="thumbnail1" class="form-control" type="text" name="favicon" hidden value="
+                    <input class="form-control" type="file" name="favicon" value="
                                     {{ $setting->favicon }}">
-                    <img src="{{ $setting->favicon }}" alt="" style="max-height: 30px; margin-top:10px;">
+                    <img src="{{ asset($setting->favicon) }}" alt="" style="max-height: 30px; margin-top:10px;">
                 </div>
-                <div id="holder1" style="margin-top:15px;max-height:100px;"> </div>
+
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email" value="{{ $setting->email }}">
@@ -66,24 +55,21 @@
                 </div>
                 <div class="form-group">
                     <label for="side_title">Title For Side</label>
-                    <input type="text" class="form-control" id="side_title" name="side_title" value="{{ $setting->side_title }}">
+                    <input type="text" class="form-control" id="side_title" name="side_title"
+                        value="{{ $setting->side_title }}">
                 </div>
                 <div class="form-group">
                     <label for="side_description">Description For Side</label>
-                    <input type="text" class="form-control" id="side_description" name="side_description" value="{{ $setting->side_description }}">
+                    <input type="text" class="form-control" id="side_description" name="side_description"
+                        value="{{ $setting->side_description }}">
                 </div>
                 <label> Side Photo </label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm2" data-input="thumbnail2" data-preview="holder2" class="btn btn-info">
-                            <i class="fa fa-picture-o"></i> Select for Side Photo
-                        </a>
-                    </span>
-                    <input id="thumbnail2" class="form-control" type="text" name="side_photo" hidden value="
+
+                    <input class="form-control" type="file" name="side_photo" value="
                                     {{ $setting->side_photo }}">
-                    <img src="{{ $setting->side_photo }}" alt=""style="margin-top:10px;max-height:100px;">
+                    <img src="{{ asset($setting->side_photo) }}" alt="" style="margin-top:10px;max-height:100px;">
                 </div>
-                <div id="holder2" style="margin-top:15px;max-height:100px;"> </div>
                 <button type="submit" class="btn btn-success btn-pill">Update Setting</button>
             </form>
         </div>

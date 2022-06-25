@@ -8,25 +8,19 @@
         </div>
         @include('backend.layouts.notification')
         <div class="ms-panel-body">
-            <form id="basic-form" method="post" action="{{ route('slide.store') }}"
-                enctype="multipart/form-data">
+            <form id="basic-form" method="post" action="{{ route('slide.store') }}" enctype="multipart/form-data">
                 @csrf
-                <label> Slider Photo  <small class="text-warning"> Rendered size:800 × 500 px </small></label>
 
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Slide
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="slide_photo" hidden value="">
+
+                <div class="form-group col-6">
+                    <label> Slider Photo <small class="text-warning"> Rendered size:800 × 500 px </small></label>
+                    <br>
+                        <input  class="form-control" type="file" name="slide_photo">
                     @error('slide_photo')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
-                <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
-
-                <div class="form-group">
+                <div class="form-group col-6">
                     <label for="notice">Status</label>
                     <br>
                     <label class="ms-checkbox-wrap ms-checkbox-success">
@@ -41,7 +35,7 @@
                     <span> Inactive </span>
                     @error('status')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-success btn-pill">Add Slide</button>
@@ -51,13 +45,4 @@
 </div>
 @endsection
 @section('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-<script>
-    $('#lfm,#lfm1,#lfm2').filemanager('image');
-</script>
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
 @endsection

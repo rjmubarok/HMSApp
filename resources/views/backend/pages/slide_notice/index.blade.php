@@ -25,7 +25,7 @@
                         @foreach ($sliders as $item)
                       <tr>
                         <th scope="row">{{$loop->iteration}}</th>
-                        <td><img src="{{ $item->slide_photo }}" alt=""></td>
+                        <td><img src="{{ asset($item->slide_photo) }}" alt=""></td>
                         <td>
                             @if ( $item->status==1 )
                             <span class="badge badge-pill badge-success">Active</span>

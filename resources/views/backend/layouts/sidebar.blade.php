@@ -58,7 +58,7 @@
       </li>
       <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#order" aria-expanded="false" aria-controls="order">
-          <span><i class="fas fa-clipboard-list"></i>Order Manegment</span>
+          <span><i class="fas fa-clipboard-list"></i>Student Apply</span>
         </a>
         <ul id="order" class="collapse" aria-labelledby="order" >
           <li> <a href="{{ route('order.index') }}">Apply Student  </a> </li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\support\Str;
 class SliderController extends Controller
 {
@@ -36,22 +37,27 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-         // return $request->all();
-         $this->validate($request,[
+        $this->validate($request,[
             'slide_photo'=>'required',
-
         ]);
 
-        $data = $request->all();
-        $slug = Str::slug($request->input('notice').'-'.time());
-         Slider::where('slug', $slug);
-       $data['slug'] = $slug;
-        $slider = Slider::create($data);
-        if($slider){
-            return redirect()->route('slide.index')->with('success', 'Slide And Notice  Added Successfully');
-        }else{
-            return back()->with('error', 'Something went Wrong');
+        $slider = new Slider();
+        $slider->slug = Carbon::now().'-'.time();
+        $slider->status = $request->status;
+        if($request->hasFile('slide_photo')){
+            $file = $request->file('slide_photo');
+            $ext = $file->getClientOriginalExtension();
+            $filename = uniqid().'.' .$ext;
+            $file->move('admin/uploads/', $filename);
+            $slider->slide_photo = 'admin/uploads/'.$filename;
         }
+         $slider->save();
+         return redirect()->route('slide.index')->with('success', 'Slide And Notice  Added Successfully');
+
+         // return $request->all();
+
+
+
     }
 
     /**
@@ -92,25 +98,18 @@ class SliderController extends Controller
     {
         $slider = Slider::find($id);
         if($slider){
-
-            $this->validate($request,[
-                'notice'=>'required',
-            'slide_photo'=>'required',
-
-            ]);
-            $data = $request->all();
-            $slider = $slider->fill($data)->save();
-            if($slider){
-                return redirect()->route('slide.index')->with('success', 'Slider Update Successfully');
-            }else{
-                return back()->with('error', 'Something went Wrong');
+            if($request->hasFile('slide_photo')){
+                $file = $request->file('slide_photo');
+                $ext = $file->getClientOriginalExtension();
+                $filename = uniqid().'.' .$ext;
+                $file->move('admin/uploads/', $filename);
+                $slider->slide_photo = 'admin/uploads/'.$filename;
             }
-
-
-
         }else{
-            return back()->with('error','Data Not Faound');
+            return back()->with('error','Slider Not Found');
         }
+         $slider->update();
+         return redirect()->route('slide.index')->with('success' ,'Slider Update Successfully');
     }
 
     /**

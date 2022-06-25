@@ -21,7 +21,7 @@
                 data-swiper='{"autoplay":true,"spaceBetween":2,"loop":true,"loopedSlides":5,"slideToClickedSlide":true}'>
                 <div class="swiper-wrapper">
                     @foreach ($sliders as $sphoto )
-                    <div class="swiper-slide"><img class="img-fluid" src="{{ $sphoto->slide_photo }}" alt="image" />
+                    <div class="swiper-slide"><img class="img-fluid" src="{{ asset($sphoto->slide_photo) }}" alt="image" />
                     </div>
                     @endforeach
 
