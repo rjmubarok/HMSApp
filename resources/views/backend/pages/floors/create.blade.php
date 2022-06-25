@@ -8,50 +8,49 @@
         </div>
         @include('backend.layouts.notification')
         <div class="ms-panel-body">
-            <form id="basic-form" method="post" action="{{ route('floor.store') }}"
-                enctype="multipart/form-data">
+            <form id="basic-form" method="post" action="{{ route('floor.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
 
                     <label for="floor_name">Floor Name </label>
-                    <input   class="form-control  @error('floor_name') is-invalid @enderror" name="floor_name" {{ old('floor_name') }} placeholder="Floor Name">
+                    <input class="form-control  @error('floor_name') is-invalid @enderror" name="floor_name" {{
+                        old('floor_name') }} placeholder="Floor Name">
                     @error('floor_name')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="total_room">Total Room </label>
-                    <input   class="form-control  @error('total_room') is-invalid @enderror" name="total_room" {{ old('total_room') }} placeholder="Total Room In Per Floor">
+                    <input class="form-control  @error('total_room') is-invalid @enderror" name="total_room" {{
+                        old('total_room') }} placeholder="Total Room In Per Floor">
                     @error('total_room')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="floor_no">Floor No:</label>
-                    <input   class="form-control  @error('floor_no') is-invalid @enderror" name="floor_no" {{ old('floor_no') }} placeholder="Floor No:">
+                    <input class="form-control  @error('floor_no') is-invalid @enderror" name="floor_no" {{
+                        old('floor_no') }} placeholder="Floor No:">
                     @error('floor_no')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
-                <label> Floor Photo <small class="text-warning">Rendered size:	348 × 348 px</small></label>
+                <label> Floor Photo <small class="text-warning">Rendered size: 348 × 348 px</small></label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Floor
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="floor_photo" hidden value="">
+                    <input class="form-control" type="file" name="floor_photo" value="">
                     @error('floor_photo')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
-                <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
+
                 <div class="form-group">
                     <label for="floor_description">Description</label>
-                    <textarea id="" rows="10" cols="5" class="form-control  @error('floor_description') is-invalid @enderror" name="floor_description">{{ old('floor_description') }}</textarea>
+                    <textarea id="" rows="10" cols="5"
+                        class="form-control  @error('floor_description') is-invalid @enderror"
+                        name="floor_description">{{ old('floor_description') }}</textarea>
                     @error('floor_description')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
@@ -68,23 +67,12 @@
                     <span> Inactive </span>
                     @error('status')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success btn-pill">Add Slide</button>
+                <button type="submit" class="btn btn-success btn-pill">Add Floor</button>
             </form>
         </div>
     </div>
 </div>
-@endsection
-@section('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-<script>
-    $('#lfm,#lfm1,#lfm2').filemanager('image');
-</script>
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
 @endsection

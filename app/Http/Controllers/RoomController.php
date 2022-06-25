@@ -42,19 +42,30 @@ class RoomController extends Controller
         $this->validate($request, [
             'room_name' => 'required',
             'room_number' => 'required',
-            'room_photo' => 'string|nullable',
             'description' => 'string|nullable',
-            'floor_id' => 'required|nullable',
-
+            'floor_id' => 'required',
         ]);
 
-        $data = $request->all();
-        $room = room::create($data);
-        if ($room) {
-            return redirect()->route('room.index')->with('success', 'Room  Added Successfully');
-        } else {
-            return back()->with('error', 'Something went Wrong');
+        $room = new room();
+        $room->slug = $request->room_name.'-'.time();
+        $room->floor_id = $request->floor_id;
+        $room->room_name = $request->room_name;
+        $room->room_number = $request->room_number;
+        $room->price = $request->price;
+        $room->total_bed = $request->total_bed;
+        $room->abailable_bed = $request->abailable_bed;
+        $room->description = $request->description;
+        $room->status = $request->status;
+        if($request->hasFile('room_photo')){
+            $file = $request->file('room_photo');
+            $ext = $file->getClientOriginalExtension();
+            $filename = uniqid().'.' .$ext;
+            $file->move('admin/uploads/', $filename);
+            $room->room_photo = 'admin/uploads/'.$filename;
         }
+         $room->save();
+         return redirect()->route('room.index')->with('success', 'Floor  Added Successfully');
+
     }
 
     /**
@@ -96,27 +107,37 @@ class RoomController extends Controller
     public function update(Request $request, $id)
     {
         $room = room::find($id);
-      //  return $room;
-        if ($room) {
+        if($room){
             $this->validate($request, [
                 'room_name' => 'required',
                 'room_number' => 'required',
-                'room_photo' => 'string|nullable',
+                'room_photo' => 'required',
                 'description' => 'string|nullable',
-               // 'floor_id' => 'required|nullable',
+                'floor_id' => 'required|nullable',
 
             ]);
-            $data = $request->all();
-          //  return $data;
-            $room = $room->fill($data)->save();
-            if ($room) {
-                return redirect()->route('room.index')->with('success', 'Room Update Successfully');
-            } else {
-                return back()->with('error', 'Something went Wrong');
-            }
-        } else {
-            return back()->with('error', 'Data Not Faound');
+            if($room){
+                $room->floor_id = $request->floor_id;
+                $room->room_name = $request->room_name;
+                $room->room_number = $request->room_number;
+                $room->price = $request->price;
+                $room->total_bed = $request->total_bed;
+                $room->abailable_bed = $request->abailable_bed;
+                $room->description = $request->description;
+                $room->status = $request->status;
+                if($request->hasFile('room_photo')){
+                    $file = $request->file('room_photo');
+                    $ext = $file->getClientOriginalExtension();
+                    $filename = uniqid().'.' .$ext;
+                    $file->move('admin/uploads/', $filename);
+                    $room->room_photo = 'admin/uploads/'.$filename;
+                }
+                $room->update();
+                return redirect()->route('room.index')->with('success' ,'Room Update Successfully');
+        }else{
+            return back()->with('error','Data Not Faound');
         }
+    }
     }
 
     /**

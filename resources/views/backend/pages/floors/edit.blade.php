@@ -34,18 +34,15 @@
                 @enderror
                 </div>
                 <label> Floor Photo <small class="text-warning">Rendered size:	348 × 348 px</small></label>
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Floor
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="floor_photo" hidden  value="{{ $floor->floor_photo }}">
-                    <img src="{{ $floor->floor_photo }}" alt="" style="max-width: 100px;">
-                    @error('floor_photo')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-                </div>
+
+                    <div class="input-group">
+                        <input  class="form-control" type="file" name="floor_photo"  value="{{ $floor->floor_photo}}">
+                        <img src="{{asset($floor->floor_photo)}}" alt="" style="max-height:70px;">
+                        @error('floor_photo')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    </div>
+
                 <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
                 <div class="form-group">
                     <label for="floor_description">Description</label>

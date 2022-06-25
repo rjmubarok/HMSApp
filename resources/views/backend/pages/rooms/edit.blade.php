@@ -83,13 +83,9 @@
                     </div>
                 <label> Room Photo </label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Room
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="room_photo" hidden  value="{{ $room->room_photo }}">
-                    <img src="{{ $room->room_photo }}" alt="" style="max-width: 100px;">
+
+                    <input id="thumbnail" class="form-control" type="file" name="room_photo"   value="{{ $room->room_photo }}">
+                    <img src="{{ asset($room->room_photo) }}" alt="" style="max-width: 100px;">
                     @error('room_photo')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

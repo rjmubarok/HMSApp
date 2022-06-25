@@ -30,7 +30,7 @@
                       <tr>
                         <th scope="row">{{$loop->iteration}}</th>
                         <td>{{ $item->floor_name }}</td>
-                        <td><img src="{{ $item->floor_photo }}" alt=""></td>
+                        <td><img src="{{ asset($item->floor_photo) }}" alt=""></td>
                         <td>{{ $item->floor_no }}</td>
                         <td>{{ $item->total_room }}</td>
                         <td>{!! $item->floor_description !!}</td>

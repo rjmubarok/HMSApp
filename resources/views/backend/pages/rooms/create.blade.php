@@ -83,12 +83,8 @@
 
                 <label> Room Photo </label>
                 <div class="input-group">
-                    <span class="input-group-btn">
-                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
-                            <i class="fa fa-picture-o"></i> Choose Photo for Room
-                        </a>
-                    </span>
-                    <input id="thumbnail" class="form-control" type="text" name="room_photo" hidden value="">
+
+                    <input  class="form-control" type="file" name="room_photo"  value="{{ old('room_photo') }}">
                     @error('room_photo')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -125,14 +121,5 @@
     </div>
 </div>
 @endsection
-@section('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-<script>
-    $('#lfm').filemanager('image');
-</script>
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-</script>
-@endsection
+
+

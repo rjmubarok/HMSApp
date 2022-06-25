@@ -45,17 +45,23 @@ class FloorController extends Controller
             'floor_no' => 'required|numeric',
 
         ]);
-
-        $data = $request->all();
-        $slug = Str::slug($request->input('floor_name') . '-' . time());
-        Floor::where('slug', $slug);
-        $data['slug'] = $slug;
-        $floor = Floor::create($data);
-        if ($floor) {
-            return redirect()->route('floor.index')->with('success', 'Floor  Added Successfully');
-        } else {
-            return back()->with('error', 'Something went Wrong');
+        $floor = new Floor();
+        $floor->slug = $request->floor_name.'-'.time();
+        $floor->floor_name = $request->floor_name;
+        $floor->total_room = $request->total_room;
+        $floor->floor_description = $request->floor_description;
+        $floor->floor_no = $request->floor_no;
+        $floor->status = $request->status;
+        if($request->hasFile('floor_photo')){
+            $file = $request->file('floor_photo');
+            $ext = $file->getClientOriginalExtension();
+            $filename = uniqid().'.' .$ext;
+            $file->move('admin/uploads/', $filename);
+            $floor->floor_photo = 'admin/uploads/'.$filename;
         }
+         $floor->save();
+         return redirect()->route('floor.index')->with('success', 'Floor  Added Successfully');
+
     }
 
     /**
@@ -98,29 +104,32 @@ class FloorController extends Controller
         if($floor){
             $this->validate($request, [
                 'floor_name' => 'required',
-                'floor_photo' => 'required',
                 'total_room' => 'required|numeric',
                 'floor_no' => 'required|numeric',
 
             ]);
-            $data = $request->all();
-            $floor = $floor->fill($data)->save();
             if($floor){
-                return redirect()->route('floor.index')->with('success', 'Floor Update Successfully');
-            }else{
-                return back()->with('error', 'Something went Wrong');
-            }
+                $floor->floor_name = $request->floor_name;
+                $floor->total_room = $request->total_room;
+                $floor->floor_description = $request->floor_description;
+                $floor->floor_no = $request->floor_no;
+                $floor->status = $request->status;
+                if($request->hasFile('floor_photo')){
+                    $file = $request->file('floor_photo');
+                    $ext = $file->getClientOriginalExtension();
+                    $filename = uniqid().'.' .$ext;
+                    $file->move('admin/uploads/', $filename);
+                    $floor->floor_photo = 'admin/uploads/'.$filename;
+                }
+                $floor->update();
+                return redirect()->route('floor.index')->with('success' ,'Floor Update Successfully');
         }else{
             return back()->with('error','Data Not Faound');
         }
     }
+}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Floor  $floor
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         $floor = Floor::find($id);

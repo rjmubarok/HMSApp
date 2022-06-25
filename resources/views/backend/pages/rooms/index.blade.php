@@ -33,7 +33,7 @@
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
                                     <td>{{ $item->room_name }}</td>
-                                    <td><img src="{{ $item->room_photo }}" alt=""></td>
+                                    <td><img src="{{ asset($item->room_photo) }}" alt=""></td>
                                     <td>{{ $item->room_number }}</td>
                                     <td>{{ \App\Models\Floor::where('id',
                                         $item->floor_id)->value('floor_name') }}</td>
